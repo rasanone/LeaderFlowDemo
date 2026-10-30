@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design Review – LeaderFlow</title>
+<meta name="description" content="Design review of leaderflow.org and summary of the redesign: findings, before/after screenshots and next steps.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<style>
+  .review-bar { background: var(--navy-800); color: var(--white); }
+  .review-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+  .review-bar img { width: 112px; }
+  .review-hero { background: linear-gradient(180deg, var(--sky-50), var(--white)); padding-block: clamp(48px, 7vw, 96px) clamp(32px, 4vw, 48px); }
+  .review-hero h1 { max-width: 20ch; }
+  .meta { font-size: var(--fs-sm); color: var(--muted); }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin-top: 28px; }
+  .toc a { display: block; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--sky-200); background: var(--white); font-size: var(--fs-sm); font-weight: 600; text-decoration: none; }
+  .toc a:hover { background: var(--sky-100); }
+
+  .stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); margin-top: 40px; }
+  .stat { padding: 20px 22px; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); }
+  .stat__label { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+  .stat__row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .stat__before { font-size: var(--fs-sm); color: #9a3b3b; text-decoration: line-through; text-decoration-thickness: 1px; }
+  .stat__after { font-family: var(--font-serif); font-size: 1.6rem; color: var(--navy-900); line-height: 1.1; }
+
+  .alert { border: 1px solid #f1c4c4; border-left: 5px solid #b42318; background: #fff6f5; border-radius: var(--radius); padding: clamp(20px, 3vw, 32px); }
+  .alert h2 { color: #7a1a12; font-size: var(--fs-h3); }
+  .alert p, .alert li { color: #4a2320; }
+  .alert ul { list-style: disc; padding-left: 1.25rem; display: grid; gap: 6px; margin: 12px 0 0; }
+  .alert code { background: #fde8e6; padding: 1px 6px; border-radius: 4px; font-size: .9em; }
+
+  .finding { display: grid; gap: clamp(20px, 3vw, 40px); padding-block: clamp(40px, 5vw, 64px); border-top: 1px solid var(--line); }
+  .finding:first-of-type { border-top: 0; padding-top: 0; }
+  .finding h3 { font-size: var(--fs-h3); margin-bottom: .6em; }
+  .finding ul { list-style: none; display: grid; gap: 10px; }
+  .finding li { position: relative; padding-left: 22px; font-size: var(--fs-sm); line-height: 1.6; }
+  .finding li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: #d14343; }
+  .finding .fixed li::before { background: #2f8f5b; }
+  .finding .cols { display: grid; gap: 24px; }
+  @media (min-width: 820px) { .finding .cols { grid-template-columns: 1fr 1fr; } }
+  .col-label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px; }
+  .col-label--bad { color: #b42318; }
+  .col-label--good { color: #2f7a52; }
+
+  .compare { display: grid; gap: 16px; }
+  @media (min-width: 820px) { .compare { grid-template-columns: 1fr 1fr; } .compare--mobile { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; } }
+  .compare figure { margin: 0; }
+  .compare figcaption { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .compare figcaption::before { content: ""; width: 10px; height: 10px; border-radius: 50%; }
+  .compare .is-before figcaption { color: #b42318; } .compare .is-before figcaption::before { background: #d14343; }
+  .compare .is-after figcaption { color: #2f7a52; } .compare .is-after figcaption::before { background: #2f8f5b; }
+  .shot { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--sand-50); box-shadow: var(--shadow-sm); }
+  .shot img { width: 100%; }
+  .shot--clip { max-height: 560px; overflow: auto; }
+
+  table.data { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+  table.data th, table.data td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.data th { font-size: var(--fs-xs); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+  .steps { counter-reset: s; list-style: none; display: grid; gap: 14px; }
+  .steps li { position: relative; padding: 18px 20px 18px 64px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+  .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 18px; top: 16px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-800); color: var(--white); font-weight: 700; font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="review-bar">
+  <div class="container">
+    <a href="../" aria-label="Redesigned LeaderFlow site"><img src="../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231"></a>
+    <a class="btn btn--light btn--sm" href="../">View the redesign</a>
+  </div>
+</div>
+
+<main id="main">
+<section class="review-hero">
+  <div class="container">
+    <p class="eyebrow">Design review · October 2026</p>
+    <h1>leaderflow.org: review and redesign</h1>
+    <p class="lede max-60">A page-by-page audit of the live site (11 pages, desktop at 1440px and mobile at 390px), followed by a rebuilt static version that keeps every word of the original copy and replaces the visual design, layout, media handling and code.</p>
+    <ul class="toc">
+      <li><a href="#security">Security issue</a></li>
+      <li><a href="#numbers">By the numbers</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="#system">Design system</a></li>
+      <li><a href="#copy">Copy notes</a></li>
+      <li><a href="#next">Next steps</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight" id="security">
+  <div class="container">
+    <div class="alert">
+      <h2>Critical: two live pages have been hijacked with gambling spam</h2>
+      <p><code>/about-us/</code> and <code>/leaderflow-development-program/participantfaqs/</code> currently return Korean casino / USDT-exchange spam pages (HTTP 200, served by the site's own server) instead of LeaderFlow content. Both pages are linked from the main navigation and the homepage "About Us" button, so visitors and sponsors clicking "About" land on spam. Search crawlers still receive the normal homepage, which is typical of a targeted SEO-spam compromise of a WordPress install.</p>
+      <ul>
+        <li>Tell the hosting provider and run a malware scan / cleanup of the WordPress install.</li>
+        <li>Update WordPress core, the theme and all plugins (Elementor, Revolution Slider, etc.) and remove unused ones.</li>
+        <li>Reset all admin, hosting, FTP and database passwords; review admin users.</li>
+        <li>Request re-indexing in Google Search Console once clean.</li>
+      </ul>
+      <p style="margin-top:14px">For the redesign, the original About and FAQ copy was recovered word for word from the Internet Archive (About: 16 Apr 2026 snapshot, FAQ: 13 Jan 2026 snapshot).</p>
+    </div>
+    <div class="compare mt-lg">
+      <figure class="is-before"><figcaption>Live /about-us/ today</figcaption><div class="shot"><img src="img/before-about-spam.webp" alt="Live About page showing Korean gambling spam" width="1200" height="750" loading="lazy"></div></figure>
+      <figure class="is-after"><figcaption>Redesigned About page</figcaption><div class="shot"><img src="img/after-about.webp" alt="Redesigned About Us page" width="1200" height="750" loading="lazy"></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="numbers">
+  <div class="container">
+    <div class="section-head"><h2>By the numbers</h2><p class="lede">Measured with a headless browser against the live site and the rebuilt site.</p></div>
+    <div class="stats">
+      <div class="stat"><p class="stat__label">Homepage requests</p><div class="stat__row"><span class="stat__before">143</span><span class="stat__after">44</span></div></div>
+      <div class="stat"><p class="stat__label">Homepage weight</p><div class="stat__row"><span class="stat__before">≈3.6 MB</span><span class="stat__after">≈0.33 MB</span></div></div>
+      <div class="stat"><p class="stat__label">Graduates page weight</p><div class="stat__row"><span class="stat__before">≈13.5 MB</span><span class="stat__after">≈62 KB*</span></div></div>
+      <div class="stat"><p class="stat__label">Graduates length (mobile)</p><div class="stat__row"><span class="stat__before">33,365 px</span><span class="stat__after">6,781 px</span></div></div>
+      <div class="stat"><p class="stat__label">Images without alt text</p><div class="stat__row"><span class="stat__before">49 of 50</span><span class="stat__after">0</span></div></div>
+      <div class="stat"><p class="stat__label">CSS + JS files</p><div class="stat__row"><span class="stat__before">45+</span><span class="stat__after">2</span></div></div>
+      <div class="stat"><p class="stat__label">Distinct heading sizes</p><div class="stat__row"><span class="stat__before">20+</span><span class="stat__after">1 fluid scale</span></div></div>
+      <div class="stat"><p class="stat__label">Sliders &amp; carousels</p><div class="stat__row"><span class="stat__before">4</span><span class="stat__after">0</span></div></div>
+    </div>
+    <p class="meta" style="margin-top:14px">* Initial load; headshots load only when a city is opened.</p>
+  </div>
+</section>
+
+<section class="section" id="findings">
+  <div class="container">
+    <div class="section-head"><h2>Findings and what changed</h2></div>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Homepage hero</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>Revolution Slider rotates three different headlines (one slide is duplicated), so each visitor sees a random message and none are readable before they change.</li>
+            <li>Headline set in light grey (#777) instead of the brand navy; weak contrast and no hierarchy.</li>
+            <li>On mobile ~400px of empty white space appears above the hero and the subtitle is dropped.</li>
+            <li>The "TrustedSite" badge floats over content on every page.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>One static hero: "Accelerate Your Leadership". The other slide messages ("Closing the Gap to Advancement", "Connect &amp; Grow with Us") became their own sections, so no copy is lost.</li>
+            <li>Navy serif headline, readable body copy, one primary button.</li>
+            <li>Stacks cleanly on mobile; badge removed.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before</figcaption><div class="shot"><img src="img/before-home.webp" alt="Original homepage above the fold" width="1200" height="750" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-home.webp" alt="Redesigned homepage above the fold" width="1200" height="750" loading="lazy"></div></figure>
+      </div>
+      <div class="compare compare--mobile">
+        <figure class="is-before"><figcaption>Before · mobile</figcaption><div class="shot"><img src="img/before-home-mob.webp" alt="Original homepage on mobile with large empty gap" width="390" height="844" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After · mobile</figcaption><div class="shot"><img src="img/after-home-mob.webp" alt="Redesigned homepage on mobile" width="390" height="844" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Video</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>The Vimeo embed is set to <code>autoplay=1&amp;muted=0</code>. Browsers block autoplay with sound, so visitors see a large <strong>empty black box</strong> directly under the headline.</li>
+            <li>The promo MP4 is embedded twice (desktop and mobile copies); its poster image has a fake play icon baked in.</li>
+            <li>Announcements are set as giant centered H1/H2s with a text-shadow.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>Click-to-play video facades: a poster image and a real play button. The Vimeo player and the MP4 load only when clicked, with sound, and never autoplay.</li>
+            <li>The MP4 appears once, with a clean poster frame taken from the video.</li>
+            <li>The "application period is closed" notice is now a styled callout, reused consistently on every page that shows it.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before</figcaption><div class="shot"><img src="img/before-video.webp" alt="Original homepage with oversized headings and black video box" width="1200" height="700" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-video.webp" alt="Redesigned section with callout and video poster" width="1200" height="750" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Program cards &amp; animation</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>The "integrated program" cards are a carousel: desktop shows 3 of 5, so Mentorship and Continuing Education are hidden. Mobile shows a different set with different titles.</li>
+            <li>Fixed-height cards with around 60% dead space; one card has no description at all.</li>
+            <li>Three overlapping motion systems (Revolution Slider, CoBlocks animation, a scroll-hijacking SmoothScroll.js) plus four Owl carousels and flip-box hover cards that don't work on touch screens.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>All five items shown at once in a numbered, equal-height grid.</li>
+            <li>Program "What is Offered?" flip boxes became cards with an expandable "Program Objectives" list that works with touch and keyboard.</li>
+            <li>The only motion is a subtle fade-in on scroll, turned off for people who prefer reduced motion. Native scrolling is untouched.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before</figcaption><div class="shot"><img src="img/before-program.webp" alt="Original program cards with empty space" width="1200" height="933" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-program.webp" alt="Redesigned program section with five pillars" width="1200" height="917" loading="lazy"></div></figure>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before · Program page</figcaption><div class="shot"><img src="img/before-program-offer.webp" alt="Original What is Offered flip boxes" width="1200" height="1200" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After · Program page</figcaption><div class="shot"><img src="img/after-program-offer.webp" alt="Redesigned What is Offered cards" width="1200" height="833" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Sponsors &amp; logos</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>Logos range from huge (Aldridge) to unreadable (Building Ventures, Hensel Phelps, CO Architects) because the source images have uneven white margins.</li>
+            <li>Regional, Gold and Silver tiers sit in a left column while Partner Organizations floats on the right with empty space beneath.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>Logos trimmed and sized by visual area, so wide and square marks carry similar weight, each in a uniform tile.</li>
+            <li>Clear tier headers (with pledge amounts on the Sponsor page) and an aligned two-column layout for regional sponsors and partners.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before</figcaption><div class="shot"><img src="img/before-sponsors.webp" alt="Original sponsor logos with inconsistent sizes" width="1200" height="917" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-sponsors.webp" alt="Redesigned sponsor logo grid" width="1200" height="1083" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Graduates &amp; people</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>177 full-size images (~13.5 MB) load at once; the page is 15,236px tall on desktop and 33,365px on mobile.</li>
+            <li>Inconsistent photo crops and sizes; testimonial carousels.</li>
+            <li>Meet the Flowcilitators: uneven rows, mixed cut-out and photo headshots at different sizes.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>Cohort tabs (2025 → 2021), each with city accordions; 5-up grid on desktop, 2-up on mobile.</li>
+            <li>All headshots resized to WebP with a uniform 4:5 crop, lazy-loaded only when a city is opened.</li>
+            <li>Testimonials shown as static quote cards; one even grid for Flowcilitators.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Before</figcaption><div class="shot shot--clip"><img src="img/before-graduates.webp" alt="Original graduates page" width="1200" height="2000" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-graduates.webp" alt="Redesigned graduates page with cohort tabs" width="1200" height="917" loading="lazy"></div></figure>
+      </div>
+    </article>
+
+    <article class="finding">
+      <div class="cols">
+        <div>
+          <h3>Typography, color &amp; consistency</h3>
+          <p class="col-label col-label--bad">Problems</p>
+          <ul>
+            <li>Three font families requested (Montserrat, Merriweather, Roboto), with font CSS loaded twice.</li>
+            <li>More than 20 heading sizes across the site; an H3 at 50px is larger than the H2s around it.</li>
+            <li>Headings switch between grey and navy at random; body copy is ~14px light grey.</li>
+            <li>At least 4 button styles (asymmetric radius, light-blue with a mismatched border, white pill…).</li>
+            <li>Every interior page opens with the same dark, low-contrast photo banner with centered text.</li>
+          </ul>
+        </div>
+        <div class="fixed">
+          <h3>&nbsp;</h3>
+          <p class="col-label col-label--good">Redesign</p>
+          <ul>
+            <li>Brand pairing kept (Merriweather headings, Montserrat body) on one fluid type scale; ~17px body copy with AA contrast.</li>
+            <li>Headings are always navy; one button system (primary, outline, light) used everywhere.</li>
+            <li>Shorter interior page headers with a left-aligned title, breadcrumb and gradient scrim.</li>
+            <li>Every image has alt text, there is one H1 per page, form fields have visible labels, and the menu works with the keyboard.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare">
+        <figure class="is-before"><figcaption>Live FAQ page today</figcaption><div class="shot"><img src="img/before-faq-spam.webp" alt="Live FAQ page showing casino spam" width="1200" height="750" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>Redesigned FAQ</figcaption><div class="shot"><img src="img/after-faqs.webp" alt="Redesigned FAQ page with grouped accordions" width="1200" height="750" loading="lazy"></div></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section--tint" id="system">
+  <div class="container">
+    <div class="section-head"><h2>Design system</h2><p class="lede">One stylesheet (<code>assets/css/site.css</code>) and one script (<code>assets/js/site.js</code>), with no frameworks or plugins.</p></div>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Element</th><th>Spec</th></tr></thead>
+        <tbody>
+          <tr><td>Color</td><td>Brand navy <code>#003f87</code>, deep navy <code>#0b2447</code> for text and dark sections, sky tints <code>#e8f2fc</code>/<code>#f4f9fe</code>, warm sand <code>#f7f6f3</code>, body text <code>#3a4556</code></td></tr>
+          <tr><td>Type</td><td>Merriweather 400 headings, Montserrat 400–700 body; fluid scale via <code>clamp()</code>: H1 2.25–3.5rem, H2 1.75–2.5rem, H3 1.25–1.4rem</td></tr>
+          <tr><td>Layout</td><td>1200px container, responsive gutters (16–32px), consistent section padding, alternating white/tinted bands</td></tr>
+          <tr><td>Components</td><td>Buttons, callout, card / pillar / offer card, logo wall, person card, quote, accordion (native <code>&lt;details&gt;</code>), tabs, form fields, CTA band, page header</td></tr>
+          <tr><td>Motion</td><td>Fade-up on scroll (≤600ms, once); disabled with <code>prefers-reduced-motion</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="copy">
+  <div class="container container--narrow">
+    <h2>Copy notes</h2>
+    <p>All visible text was kept word for word. An automated check compares every text block on each new page against the original page source. Nothing new appears except accessibility labels ("Skip to content" and the screen-reader name of the menu button). The only original strings left out are three alternate <em>mobile-only</em> headings that repeated desktop content ("Preparing professionals to lead…", "Questions? Ask!", "Friends of LeaderFlow").</p>
+    <p>These existing copy issues were <strong>left unchanged</strong>, as instructed, for the owner to review:</p>
+    <ul class="ticks">
+      <li>FAQ: the last answer is cut off mid-word ("…align your current role with your long-term career vis").</li>
+      <li>Homepage: "Acquire practice skills" (probably "practical skills").</li>
+      <li>Graduates: labels mix "Field:" and "Industry:" for the same information.</li>
+      <li>Footer: "© 2023" is out of date.</li>
+      <li>FAQ: the 2026 application window closes "January 4, 2026", while hidden text on the Application Process page says "January 9, 2026". Applications are closed either way, but the FAQ still describes the window as open.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--sand" id="next">
+  <div class="container container--narrow">
+    <h2>Next steps</h2>
+    <ol class="steps">
+      <li><strong>Clean up the WordPress compromise</strong> on the live domain (see the security notice above).</li>
+      <li><strong>Connect the forms.</strong> The Contact and Flowcilitator forms keep every field and label, but GitHub Pages has no backend. Set each form's <code>data-endpoint</code> to a form service such as Formspree, Basin or Getform (see README).</li>
+      <li><strong>Review the copy notes</strong> above, then make wording updates in one pass.</li>
+      <li><strong>Decide where it will live.</strong> The site can stay a static site (GitHub Pages, Netlify, Cloudflare Pages) or be ported into a lean WordPress theme using the same CSS.</li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><div class="footer__bottom">
+    <p class="footer__legal">Design review of leaderflow.org · Screenshots captured October 2026</p>
+    <a href="../">View the redesign →</a>
+  </div></div>
+</footer>
+</body>
+</html>
