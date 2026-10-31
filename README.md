@@ -55,5 +55,7 @@ Donate, Subscribe and social links point to the same external URLs as the live s
 ## Notes
 
 - Videos load only when clicked: the Vimeo impact video, and the promo MP4 still hosted on leaderflow.org.
-- Fonts: Merriweather + Montserrat from Google Fonts.
+- Fonts: Fraunces (display serif) + Inter (body) from Google Fonts.
+- Design v2 (signature gold accent, blueprint-grid navy bands, gold "flow" line, numbered bento/timeline) was informed by research into larger peer organizations; see the "v2: Peer research" section of `review/`.
+- Motion respects `prefers-reduced-motion`; base CSS is the finished state, animation is layered on top.
 - Copy issues in the original text were intentionally left unchanged; they're listed on the review page.

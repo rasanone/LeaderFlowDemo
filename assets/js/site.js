@@ -123,8 +123,14 @@
     });
   });
 
-  /* ---------- Reveal on scroll ---------- */
-  var reveals = document.querySelectorAll('.reveal');
+  /* ---------- Reveal on scroll (+ flow lines drawing in) ---------- */
+  var reveals = document.querySelectorAll('.reveal, .draw');
+  // Stagger siblings that reveal together (grids, timelines): each gets its index as --i.
+  document.querySelectorAll('.bento, .people, .logos, .timeline, .values, .support-grid, .facts').forEach(function (group) {
+    Array.prototype.forEach.call(group.querySelectorAll(':scope > .reveal'), function (el, i) {
+      el.style.setProperty('--i', Math.min(i, 6));
+    });
+  });
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {

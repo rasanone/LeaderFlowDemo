@@ -9,17 +9,17 @@
 <link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Inter:wght@400..700&display=swap">
 <link rel="stylesheet" href="../assets/css/site.css">
 <style>
-  .review-bar { background: var(--navy-800); color: var(--white); }
+  .review-bar { background: var(--ink-900); color: var(--white); }
   .review-bar .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
   .review-bar img { width: 112px; }
-  .review-hero { background: linear-gradient(180deg, var(--sky-50), var(--white)); padding-block: clamp(48px, 7vw, 96px) clamp(32px, 4vw, 48px); }
+  .review-hero { background: linear-gradient(180deg, var(--paper), var(--white)); padding-block: clamp(48px, 7vw, 96px) clamp(32px, 4vw, 48px); }
   .review-hero h1 { max-width: 20ch; }
   .meta { font-size: var(--fs-sm); color: var(--muted); }
   .toc { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin-top: 28px; }
-  .toc a { display: block; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--sky-200); background: var(--white); font-size: var(--fs-sm); font-weight: 600; text-decoration: none; }
+  .toc a { display: block; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); font-size: var(--fs-sm); font-weight: 600; text-decoration: none; }
   .toc a:hover { background: var(--sky-100); }
 
   .stats { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); margin-top: 40px; }
@@ -27,7 +27,7 @@
   .stat__label { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
   .stat__row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
   .stat__before { font-size: var(--fs-sm); color: #9a3b3b; text-decoration: line-through; text-decoration-thickness: 1px; }
-  .stat__after { font-family: var(--font-serif); font-size: 1.6rem; color: var(--navy-900); line-height: 1.1; }
+  .stat__after { font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink-900); line-height: 1.1; }
 
   .alert { border: 1px solid #f1c4c4; border-left: 5px solid #b42318; background: #fff6f5; border-radius: var(--radius); padding: clamp(20px, 3vw, 32px); }
   .alert h2 { color: #7a1a12; font-size: var(--fs-h3); }
@@ -55,7 +55,7 @@
   .compare figcaption::before { content: ""; width: 10px; height: 10px; border-radius: 50%; }
   .compare .is-before figcaption { color: #b42318; } .compare .is-before figcaption::before { background: #d14343; }
   .compare .is-after figcaption { color: #2f7a52; } .compare .is-after figcaption::before { background: #2f8f5b; }
-  .shot { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--sand-50); box-shadow: var(--shadow-sm); }
+  .shot { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--paper); box-shadow: var(--shadow-sm); }
   .shot img { width: 100%; }
   .shot--clip { max-height: 560px; overflow: auto; }
 
@@ -65,6 +65,22 @@
   .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
   .steps { counter-reset: s; list-style: none; display: grid; gap: 14px; }
   .steps li { position: relative; padding: 18px 20px 18px 64px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+  .max-60 { max-width: 60ch; }
+  .peers { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .peer { padding: 28px; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--line); }
+  .peer h3 { font-size: 1.25rem; margin-bottom: .25em; }
+  .peer .meta { margin-bottom: 14px; }
+  .peer ul { list-style: none; display: grid; gap: 8px; font-size: var(--fs-sm); }
+  .peer li { position: relative; padding-left: 18px; }
+  .peer li::before { content: ""; position: absolute; left: 0; top: .65em; width: 8px; height: 2px; background: var(--gold-500); }
+  .moves { counter-reset: m; list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .moves li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .moves li::before { counter-increment: m; content: counter(m, decimal-leading-zero); font: 400 1.6rem/1 var(--font-serif); color: var(--gold-700); }
+  .moves strong { display: block; font-family: var(--font-serif); font-weight: 500; font-size: 1.15rem; margin-bottom: 4px; }
+  .moves p { margin: 0; font-size: var(--fs-sm); }
+  .swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .swatch { display: inline-flex; align-items: center; gap: 8px; font-size: var(--fs-xs); }
+  .swatch i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid rgb(0 0 0 / .08); }
   .steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 18px; top: 16px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--navy-800); color: var(--white); font-weight: 700; font-size: .85rem; }
 </style>
 </head>
@@ -72,7 +88,7 @@
 <div class="review-bar">
   <div class="container">
     <a href="../" aria-label="Redesigned LeaderFlow site"><img src="../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231"></a>
-    <a class="btn btn--light btn--sm" href="../">View the redesign</a>
+    <a class="btn btn--gold btn--sm" href="../">View the redesign</a>
   </div>
 </div>
 
@@ -85,6 +101,7 @@
     <ul class="toc">
       <li><a href="#security">Security issue</a></li>
       <li><a href="#numbers">By the numbers</a></li>
+      <li><a href="#v2">v2: Peer research</a></li>
       <li><a href="#findings">Findings</a></li>
       <li><a href="#system">Design system</a></li>
       <li><a href="#copy">Copy notes</a></li>
@@ -113,12 +130,12 @@
   </div>
 </section>
 
-<section class="section section--tint" id="numbers">
+<section class="section section--paper" id="numbers">
   <div class="container">
     <div class="section-head"><h2>By the numbers</h2><p class="lede">Measured with a headless browser against the live site and the rebuilt site.</p></div>
     <div class="stats">
-      <div class="stat"><p class="stat__label">Homepage requests</p><div class="stat__row"><span class="stat__before">143</span><span class="stat__after">44</span></div></div>
-      <div class="stat"><p class="stat__label">Homepage weight</p><div class="stat__row"><span class="stat__before">≈3.6 MB</span><span class="stat__after">≈0.33 MB</span></div></div>
+      <div class="stat"><p class="stat__label">Homepage requests</p><div class="stat__row"><span class="stat__before">143</span><span class="stat__after">41</span></div></div>
+      <div class="stat"><p class="stat__label">Homepage weight</p><div class="stat__row"><span class="stat__before">≈3.6 MB</span><span class="stat__after">≈0.5 MB</span></div></div>
       <div class="stat"><p class="stat__label">Graduates page weight</p><div class="stat__row"><span class="stat__before">≈13.5 MB</span><span class="stat__after">≈62 KB*</span></div></div>
       <div class="stat"><p class="stat__label">Graduates length (mobile)</p><div class="stat__row"><span class="stat__before">33,365 px</span><span class="stat__after">6,781 px</span></div></div>
       <div class="stat"><p class="stat__label">Images without alt text</p><div class="stat__row"><span class="stat__before">49 of 50</span><span class="stat__after">0</span></div></div>
@@ -130,7 +147,80 @@
   </div>
 </section>
 
-<section class="section" id="findings">
+<section class="section" id="v2">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Version 2 · UI overhaul</p>
+      <h2>Learning from larger peer organizations</h2>
+      <p class="lede">The first rebuild fixed the problems but kept the old site's layout: dark photo headers with centered white text, pale-blue bands, standard cards. For v2 we studied larger leadership and career nonprofits and borrowed the principles they share. The copy is still word for word.</p>
+    </div>
+    <div class="peers">
+      <article class="peer">
+        <h3>Career &amp; leadership nonprofits</h3>
+        <p class="meta">MLT · SEO · Toigo Foundation · Executive Leadership Council · ALPFA</p>
+        <ul>
+          <li>Short statement headlines on a dark navy anchor, with one warm accent color</li>
+          <li>Warm off-white backgrounds instead of pure white (ALPFA <code>#faf9f4</code>)</li>
+          <li>Small uppercase eyebrow labels; sponsors shown by tier</li>
+          <li>Serif + sans pairing (ALPFA uses Lora + Poppins); subtle fade-up motion</li>
+        </ul>
+      </article>
+      <article class="peer">
+        <h3>Leadership &amp; fellowship programs</h3>
+        <p class="meta">Center for Creative Leadership · Braven · Echoing Green · Year Up · Teach For America · Aspen Institute</p>
+        <ul>
+          <li>Numbered program steps (Year Up's Train / Experience / Access, TFA's Connect / Lead / Grow)</li>
+          <li>A recognizable graphic device (CCL's network lines over photos)</li>
+          <li>Real people as the hero; consistent photo crops and treatments</li>
+          <li>Navy + cream bands (TFA <code>#00225A</code> / <code>#FFEED4</code>, CCL <code>#fbf8f2</code>)</li>
+        </ul>
+      </article>
+      <article class="peer">
+        <h3>Award-recognized nonprofit sites</h3>
+        <p class="meta">charity: water · Obama Foundation Leaders · Webby nonprofit honorees</p>
+        <ul>
+          <li>Premium comes from typographic scale and whitespace, not effects</li>
+          <li>Large editorial pull quotes with clear attribution</li>
+          <li>Every section opens with one idea and ends with one action</li>
+          <li>Motion is restrained and always respects reduced-motion settings</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="split mt-lg" style="align-items:start">
+      <div>
+        <h3 class="eyebrow">What changed in v2</h3>
+        <ol class="moves">
+          <li><div><strong>Editorial type: Fraunces + Inter</strong><p>A variable display serif with optical sizing replaces Merriweather; Inter replaces Montserrat's wide 2015-era capitals. Headlines go up to 96px, set tight and left-aligned.</p></div></li>
+          <li><div><strong>One accent: signal gold</strong><p>Gold <code>#f2b33d</code> (from the flag in the logo) is used only for eyebrows, key words, numerals and the Donate button. On light backgrounds it darkens to <code>#8a5a00</code> for AA contrast.</p></div></li>
+          <li><div><strong>Signature device: blueprint grid + flow line</strong><p>A faint architectural grid on every navy surface and a gold line that draws itself in, a nod to the AEC audience and the "flow" in the name.</p></div></li>
+          <li><div><strong>Statement hero with an arched photo</strong><p>Split layout on deep navy; "Leadership" in gold italic; the photo sits in an arch with an offset gold outline.</p></div></li>
+          <li><div><strong>Numbered structures</strong><p>The five pillars become a bento grid with outlined numerals; the seven sessions become a 01–07 timeline whose connector grows as you scroll.</p></div></li>
+          <li><div><strong>Consistent people treatment</strong><p>Headshots share a navy duotone that resolves to full color on hover; founders get arched portraits.</p></div></li>
+          <li><div><strong>Sponsor ladder</strong><p>Sponsor levels read like a pricing table: tier and pledge on the left, logos (greyscale until hovered) on the right, with Foundational raised on navy.</p></div></li>
+          <li><div><strong>Editorial quotes and statements</strong><p>The city sentence becomes a large statement with gold-underlined cities; the Flowcilitator testimonial becomes a full-width italic pull quote.</p></div></li>
+        </ol>
+      </div>
+      <div>
+        <h3 class="eyebrow">Palette</h3>
+        <div class="swatches">
+          <span class="swatch"><i style="background:#0b2447"></i>Ink #0b2447</span>
+          <span class="swatch"><i style="background:#003f87"></i>Navy #003f87</span>
+          <span class="swatch"><i style="background:#f2b33d"></i>Gold #f2b33d</span>
+          <span class="swatch"><i style="background:#8a5a00"></i>Gold text #8a5a00</span>
+          <span class="swatch"><i style="background:#f7f4ee"></i>Paper #f7f4ee</span>
+          <span class="swatch"><i style="background:#7cc4ff"></i>Sky #7cc4ff</span>
+        </div>
+        <div class="compare mt-lg" style="grid-template-columns:1fr">
+          <figure class="is-after"><figcaption>v2 homepage</figcaption><div class="shot"><img src="img/after-home.webp" alt="Version 2 homepage hero with arched photo and gold flow line" width="1200" height="750" loading="lazy"></div></figure>
+          <figure class="is-after"><figcaption>v2 program pillars</figcaption><div class="shot"><img src="img/after-program.webp" alt="Version 2 bento grid of program pillars" width="1200" height="917" loading="lazy"></div></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="findings">
   <div class="container">
     <div class="section-head"><h2>Findings and what changed</h2></div>
 
@@ -216,11 +306,11 @@
       </div>
       <div class="compare">
         <figure class="is-before"><figcaption>Before</figcaption><div class="shot"><img src="img/before-program.webp" alt="Original program cards with empty space" width="1200" height="933" loading="lazy"></div></figure>
-        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-program.webp" alt="Redesigned program section with five pillars" width="1200" height="917" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-program.webp" alt="Redesigned program section with a numbered bento grid of the five pillars" width="1200" height="917" loading="lazy"></div></figure>
       </div>
       <div class="compare">
         <figure class="is-before"><figcaption>Before · Program page</figcaption><div class="shot"><img src="img/before-program-offer.webp" alt="Original What is Offered flip boxes" width="1200" height="1200" loading="lazy"></div></figure>
-        <figure class="is-after"><figcaption>After · Program page</figcaption><div class="shot"><img src="img/after-program-offer.webp" alt="Redesigned What is Offered cards" width="1200" height="833" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After · Program page</figcaption><div class="shot"><img src="img/after-program-offer.webp" alt="Redesigned What is Offered timeline with numbered sessions" width="1200" height="833" loading="lazy"></div></figure>
       </div>
     </article>
 
@@ -272,7 +362,7 @@
       </div>
       <div class="compare">
         <figure class="is-before"><figcaption>Before</figcaption><div class="shot shot--clip"><img src="img/before-graduates.webp" alt="Original graduates page" width="1200" height="2000" loading="lazy"></div></figure>
-        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-graduates.webp" alt="Redesigned graduates page with cohort tabs" width="1200" height="917" loading="lazy"></div></figure>
+        <figure class="is-after"><figcaption>After</figcaption><div class="shot"><img src="img/after-graduates.webp" alt="Redesigned graduates page with cohort chips and duotone headshots" width="1200" height="917" loading="lazy"></div></figure>
       </div>
     </article>
 
@@ -293,9 +383,9 @@
           <h3>&nbsp;</h3>
           <p class="col-label col-label--good">Redesign</p>
           <ul>
-            <li>Brand pairing kept (Merriweather headings, Montserrat body) on one fluid type scale; ~17px body copy with AA contrast.</li>
-            <li>Headings are always navy; one button system (primary, outline, light) used everywhere.</li>
-            <li>Shorter interior page headers with a left-aligned title, breadcrumb and gradient scrim.</li>
+            <li>Fraunces display headings and Inter body text on one fluid type scale; ~17px body copy with AA contrast.</li>
+            <li>Headings are always ink navy; one pill button system (navy, gold, ghost) used everywhere.</li>
+            <li>Shorter interior page headers: left-aligned title and breadcrumb on a blueprint-grid navy band, with an angled photo panel.</li>
             <li>Every image has alt text, there is one H1 per page, form fields have visible labels, and the menu works with the keyboard.</li>
           </ul>
         </div>
@@ -308,18 +398,18 @@
   </div>
 </section>
 
-<section class="section section--tint" id="system">
+<section class="section section--paper" id="system">
   <div class="container">
     <div class="section-head"><h2>Design system</h2><p class="lede">One stylesheet (<code>assets/css/site.css</code>) and one script (<code>assets/js/site.js</code>), with no frameworks or plugins.</p></div>
     <div class="table-wrap">
       <table class="data">
         <thead><tr><th>Element</th><th>Spec</th></tr></thead>
         <tbody>
-          <tr><td>Color</td><td>Brand navy <code>#003f87</code>, deep navy <code>#0b2447</code> for text and dark sections, sky tints <code>#e8f2fc</code>/<code>#f4f9fe</code>, warm sand <code>#f7f6f3</code>, body text <code>#3a4556</code></td></tr>
-          <tr><td>Type</td><td>Merriweather 400 headings, Montserrat 400–700 body; fluid scale via <code>clamp()</code>: H1 2.25–3.5rem, H2 1.75–2.5rem, H3 1.25–1.4rem</td></tr>
-          <tr><td>Layout</td><td>1200px container, responsive gutters (16–32px), consistent section padding, alternating white/tinted bands</td></tr>
-          <tr><td>Components</td><td>Buttons, callout, card / pillar / offer card, logo wall, person card, quote, accordion (native <code>&lt;details&gt;</code>), tabs, form fields, CTA band, page header</td></tr>
-          <tr><td>Motion</td><td>Fade-up on scroll (≤600ms, once); disabled with <code>prefers-reduced-motion</code></td></tr>
+          <tr><td>Color</td><td>Ink <code>#0b2447</code> for headings and dark bands, brand navy <code>#003f87</code> for links and buttons, one accent gold <code>#f2b33d</code> (text on light: <code>#8a5a00</code>), warm paper <code>#f7f4ee</code>, sky <code>#7cc4ff</code> for focus on dark, body text <code>#3d4a5c</code></td></tr>
+          <tr><td>Type</td><td>Fraunces (variable: optical size, weight, softness) for headings, Inter 400–700 for body and UI; fluid scale via <code>clamp()</code>: H1 2.75–6rem, display H2 2.35–4.25rem, H2 2–3.25rem, H3 1.3–1.55rem; uppercase tracked eyebrows</td></tr>
+          <tr><td>Layout</td><td>1240px container, responsive gutters (16–40px), generous section padding (72–136px), white / paper / ink bands; bento and split grids</td></tr>
+          <tr><td>Components</td><td>Buttons (navy, gold, ghost, arrow), blueprint grid surface, flow line, arched and angled photo frames, callout, bento tiles, numbered timeline, logo ladder, duotone person card, pull quote, accordion (native <code>&lt;details&gt;</code>), cohort chips, form fields, CTA band, page header</td></tr>
+          <tr><td>Motion</td><td>Staggered fade-up on scroll (600ms, once), hero headline rise, flow lines that draw in, scroll-driven timeline connector (CSS <code>animation-timeline</code>, static fallback); all disabled with <code>prefers-reduced-motion</code></td></tr>
         </tbody>
       </table>
     </div>
@@ -341,7 +431,7 @@
   </div>
 </section>
 
-<section class="section section--sand" id="next">
+<section class="section section--paper" id="next">
   <div class="container container--narrow">
     <h2>Next steps</h2>
     <ol class="steps">
@@ -354,7 +444,7 @@
 </section>
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer bp">
   <div class="container"><div class="footer__bottom">
     <p class="footer__legal">Design review of leaderflow.org · Screenshots captured October 2026</p>
     <a href="../">View the redesign →</a>
