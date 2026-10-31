@@ -15,26 +15,41 @@
   /* ---------- Mobile nav ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var mq = window.matchMedia('(max-width: 1040px)');
-  function closeNav() {
+  function closeNav(returnFocus) {
+    if (!document.body.classList.contains('nav-open')) return;
     document.body.classList.remove('nav-open');
-    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+    }
   }
   if (toggle) {
     toggle.addEventListener('click', function () {
       var open = document.body.classList.toggle('nav-open');
       toggle.setAttribute('aria-expanded', String(open));
+      // Show where you are: the current section starts expanded.
+      var cur = document.querySelector('.nav__item--has-sub.is-current:not(.is-open) .nav__expand');
+      if (open && cur) cur.click();
     });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(true); });
+    // Close the sheet when a link inside it is followed (matters for same-page/hash links and bfcache).
+    document.querySelectorAll('.nav a').forEach(function (a) {
+      a.addEventListener('click', function () { if (mq.matches) closeNav(); });
+    });
+    window.addEventListener('pageshow', function () { closeNav(); });
     mq.addEventListener('change', function (e) { if (!e.matches) closeNav(); });
   }
 
   /* ---------- Dropdowns: caret buttons toggle submenus (touch + keyboard) ---------- */
   document.querySelectorAll('.nav__item--has-sub').forEach(function (item) {
     var btn = item.querySelector('.nav__expand');
+    var sub = item.querySelector('.nav__sub');
     if (!btn) return;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var open = !item.classList.contains('is-open');
+      // Mobile accordion animates max-height to the submenu's real height.
+      if (sub) sub.style.setProperty('--sub-h', sub.scrollHeight + 'px');
       document.querySelectorAll('.nav__item.is-open').forEach(function (o) {
         if (o !== item) { o.classList.remove('is-open'); o.querySelector('.nav__expand').setAttribute('aria-expanded', 'false'); }
       });
