@@ -1,0 +1,14 @@
+{
+  "name": "LeaderFlow",
+  "short_name": "LeaderFlow",
+  "description": "Leadership for AEC professionals.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b2447",
+  "theme_color": "#0b2447",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/img/brand/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

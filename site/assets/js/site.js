@@ -16,18 +16,26 @@
   /* ---------- Mobile nav ---------- */
   var toggle = document.querySelector('.nav-toggle');
   var mq = window.matchMedia('(max-width: 1040px)');
+  // On phones the header toggle is hidden and the tab bar's Menu button opens the same sheet.
+  var tabMenu = document.querySelector('.tabbar__menu');
+  function setExpanded(open) {
+    if (toggle) toggle.setAttribute('aria-expanded', String(open));
+    if (tabMenu) tabMenu.setAttribute('aria-expanded', String(open));
+  }
   function closeNav(returnFocus) {
     if (!document.body.classList.contains('nav-open')) return;
     document.body.classList.remove('nav-open');
-    if (toggle) {
-      toggle.setAttribute('aria-expanded', 'false');
-      if (returnFocus) toggle.focus();
+    setExpanded(false);
+    if (returnFocus) {
+      var target = toggle && toggle.offsetParent ? toggle : tabMenu;
+      if (target) target.focus();
     }
   }
+  if (toggle && tabMenu) tabMenu.addEventListener('click', function () { toggle.click(); });
   if (toggle) {
     toggle.addEventListener('click', function () {
       var open = document.body.classList.toggle('nav-open');
-      toggle.setAttribute('aria-expanded', String(open));
+      setExpanded(open);
       // Show where you are: the current section starts expanded.
       var cur = document.querySelector('.nav__item--has-sub.is-current:not(.is-open) .nav__expand');
       if (open && cur) cur.click();
@@ -39,6 +47,43 @@
     });
     window.addEventListener('pageshow', function () { closeNav(); });
     mq.addEventListener('change', function (e) { if (!e.matches) closeNav(); });
+  }
+
+  /* ---------- Tab bar: adapt the glass to what's behind it ----------
+     Find the first opaque background under the pill's centre; if it's dark (or a photo), use the dark glass. */
+  var tabbar = document.querySelector('.tabbar');
+  if (tabbar && document.elementsFromPoint) {
+    var isDarkAt = function (x, y) {
+      var els = document.elementsFromPoint(x, y);
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        if (tabbar.contains(el)) continue;
+        if (el.tagName === 'IMG' || el.tagName === 'VIDEO' || el.tagName === 'IFRAME') return true;
+        for (var n = el; n && n.nodeType === 1; n = n.parentElement) {
+          var c = getComputedStyle(n).backgroundColor.match(/[\d.]+/g);
+          if (c && (c[3] === undefined || +c[3] > 0.5)) {
+            return (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) < 140;
+          }
+        }
+        return false;
+      }
+      return false;
+    };
+    var tabTick = false;
+    var updateTabbar = function () {
+      tabTick = false;
+      var r = tabbar.getBoundingClientRect();
+      if (!r.width) return; // hidden above the phone breakpoint
+      var y = r.top + r.height / 2;
+      // Sample three points so a pill straddling a light/dark edge follows the majority.
+      var dark = [0.2, 0.5, 0.8].filter(function (f) { return isDarkAt(r.left + r.width * f, y); }).length >= 2;
+      tabbar.classList.toggle('tabbar--dark', dark);
+    };
+    var queueTabbar = function () { if (!tabTick) { tabTick = true; requestAnimationFrame(updateTabbar); } };
+    window.addEventListener('scroll', queueTabbar, { passive: true });
+    window.addEventListener('resize', queueTabbar);
+    window.addEventListener('load', queueTabbar);
+    updateTabbar();
   }
 
   /* ---------- Dropdowns: caret buttons toggle submenus (touch + keyboard) ---------- */

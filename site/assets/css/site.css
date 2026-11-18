@@ -414,6 +414,103 @@ html:has(body.nav-open) { overflow: hidden; }
   .header-cta { min-height: 40px; padding: 8px 16px; font-size: .8125rem; }
 }
 
+/* ---------- Mobile tab bar: floating glass pill ----------
+   Phones only. It sits low, just above the home indicator, so content keeps the space.
+   JS adds .tabbar--dark when the pill is over a dark section, so the glass tint and icons flip for contrast. */
+.tabbar { display: none; }
+@media (max-width: 767px) {
+  :root {
+    --tabbar-h: 62px;
+    --tabbar-bottom: max(10px, calc(env(safe-area-inset-bottom) - 12px));
+    --tabbar-space: calc(var(--tabbar-h) + var(--tabbar-bottom) + 14px);
+  }
+  .nav-toggle { display: none; }
+  .tabbar {
+    position: fixed; z-index: 60; left: 50%; bottom: var(--tabbar-bottom);
+    display: flex; align-items: stretch; gap: 2px;
+    width: min(calc(100% - 24px), 420px); height: var(--tabbar-h); padding: 5px;
+    border-radius: 999px; isolation: isolate;
+    color: var(--ink-900);
+    background: rgb(255 255 255 / .16);
+    -webkit-backdrop-filter: blur(10px) saturate(1.8) brightness(1.04); backdrop-filter: blur(10px) saturate(1.8) brightness(1.04);
+    border: 1px solid rgb(255 255 255 / .45);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / .7),
+      inset 0 -1px 1px rgb(255 255 255 / .18),
+      0 10px 30px rgb(6 22 49 / .16),
+      0 1px 3px rgb(6 22 49 / .1);
+    transform: translateX(-50%);
+    transition: color .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease),
+                box-shadow .3s var(--ease), opacity .2s var(--ease), transform .3s var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Specular sheen across the top half: the "liquid" highlight. */
+  .tabbar::before {
+    content: ""; position: absolute; inset: 1px; z-index: -1; border-radius: inherit; pointer-events: none;
+    background: linear-gradient(180deg, rgb(255 255 255 / .3), rgb(255 255 255 / 0) 55%);
+    opacity: .9; transition: opacity .3s var(--ease);
+  }
+  .tabbar--dark, .nav-open .tabbar {
+    color: var(--white);
+    background: rgb(11 36 71 / .22);
+    border-color: rgb(255 255 255 / .16);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / .22),
+      inset 0 -1px 1px rgb(255 255 255 / .06),
+      0 10px 30px rgb(0 0 0 / .3),
+      0 1px 3px rgb(0 0 0 / .2);
+  }
+  .tabbar--dark::before, .nav-open .tabbar::before { opacity: .3; }
+  .tabbar__item {
+    position: relative; flex: 1 1 0; min-width: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+    padding: 0 2px; border: 0; border-radius: 999px; background: none; cursor: pointer;
+    font: 600 .6875rem/1 var(--font-sans); letter-spacing: .01em;
+    color: inherit; text-decoration: none; opacity: .72;
+    transition: opacity .2s var(--ease), background-color .25s var(--ease), color .25s var(--ease), transform .15s var(--ease);
+  }
+  .tabbar__item:hover { text-decoration: none; opacity: 1; }
+  .tabbar__item:active { transform: scale(.93); }
+  .tabbar__item svg { width: 22px; height: 22px; flex: none; }
+  .tabbar__item span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  /* Current page: a soft glass bubble behind the tab, gold accent. */
+  .tabbar__item[aria-current="page"], .nav-open .tabbar__menu {
+    opacity: 1; background: rgb(255 255 255 / .5);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / .8), 0 1px 4px rgb(6 22 49 / .08);
+  }
+  .tabbar__item[aria-current="page"] svg { color: var(--gold-700); }
+  .tabbar--dark .tabbar__item[aria-current="page"], .nav-open .tabbar__menu,
+  .nav-open .tabbar__item[aria-current="page"] {
+    background: rgb(255 255 255 / .14); box-shadow: inset 0 1px 0 rgb(255 255 255 / .18);
+  }
+  .tabbar--dark .tabbar__item[aria-current="page"] svg, .nav-open .tabbar__item[aria-current="page"] svg { color: var(--gold-500); }
+  .nav-open .tabbar__item[aria-current="page"] { background: none; box-shadow: none; opacity: .72; }
+  .tabbar__close { display: none; }
+  .nav-open .tabbar__open { display: none; }
+  .nav-open .tabbar__close { display: block; }
+  .tabbar :focus-visible { outline: 2px solid var(--navy-500); outline-offset: -2px; }
+  .tabbar--dark :focus-visible, .nav-open .tabbar :focus-visible { outline-color: var(--sky-300); }
+  /* Step aside while typing, so the keyboard doesn't push the pill up over the form. */
+  body:has(:is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"]), textarea, select):focus) .tabbar {
+    opacity: 0; pointer-events: none; transform: translate(-50%, 16px);
+  }
+  /* Room for the pill at the very end of the page and in the menu sheet, so nothing is stuck under it. */
+  .site-footer { padding-bottom: var(--tabbar-space); }
+  .nav { padding-bottom: calc(var(--tabbar-space) + 16px); }
+  .preview-flag { bottom: calc(var(--tabbar-space) + 4px); }
+}
+/* No glass support, or the user asked for less transparency: solid, still pill-shaped. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  @media (max-width: 767px) {
+    .tabbar { background: rgb(255 255 255 / .94); }
+    .tabbar--dark, .nav-open .tabbar { background: rgb(11 36 71 / .94); }
+  }
+}
+@media (max-width: 767px) and (prefers-reduced-transparency: reduce) {
+  .tabbar { background: rgb(255 255 255 / .94); }
+  .tabbar--dark, .nav-open .tabbar { background: rgb(11 36 71 / .94); }
+}
+
 /* ---------- Home hero ---------- */
 .hero { overflow: hidden; color: var(--on-dark); }
 .hero__inner { position: relative; display: grid; gap: clamp(40px, 5vw, 72px); align-items: center; padding-block: clamp(56px, 8vw, 120px) clamp(96px, 12vw, 176px); }
