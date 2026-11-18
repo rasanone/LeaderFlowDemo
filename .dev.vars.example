@@ -1,0 +1,8 @@
+# Copy this file to .dev.vars and fill in your own values. Never commit .dev.vars.
+# These are only used by `wrangler pages dev` on your computer.
+
+# Cloudflare's published Turnstile TEST secret: always passes. Real secret goes in the dashboard only.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+
+# Leave empty locally to skip sending email, or use your own Resend test key.
+RESEND_API_KEY=

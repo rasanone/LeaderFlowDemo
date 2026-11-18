@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connect with Us – LeaderFlow</title>
+<meta name="description" content="Get in touch with LeaderFlow.">
+<link rel="canonical" href="https://leaderflow.org/connect-with-us/">
+<meta name="theme-color" content="#0b2447">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/fraunces-roman-v1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-v1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/site.css">
+<script defer src="../assets/js/site.js"></script>
+</head>
+<body class="page--form-only">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../" aria-label="LeaderFlow home"><img src="../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-1">
+            <li><a href="../leaderflow-development-program/">Program Overview</a></li>
+            <li><a href="../leaderflow-development-program/application-process/">Application Process</a></li>
+            <li><a href="../leaderflow-development-program/application-form/">Application Form</a></li>
+            <li><a href="../leaderflow-development-program/leaderflow-graduates/">LeaderFlow Graduates</a></li>
+            <li><a href="../leaderflow-development-program/participantfaqs/">Frequently Asked Questions</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../flowcilitators/become-a-flowcilitator/">Flowcilitators</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-2"><span class="visually-hidden">Flowcilitators menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-2">
+            <li><a href="../flowcilitators/become-a-flowcilitator/">Become a Flowcilitator</a></li>
+            <li><a href="../flowcilitators/meet-the-flowcilitators/">Meet the Flowcilitators</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="../become-a-sponsor/">Sponsor</a></li>
+        <li class="nav__item is-current"><a class="nav__link" href="../connect-with-us/" aria-current="page">Connect</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold btn--sm header-cta" href="../donate/">Donate</a>
+  </div>
+</header>
+<main id="main">
+<!-- Form-first page: the whole form sits in the first view, beside the title. -->
+<section class="form-hero bp">
+  <div class="container form-hero__inner">
+    <div class="form-hero__text">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li aria-current="page">Connect with Us</li></ol></nav>
+      <h1>Connect with Us</h1>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+          <div><span class="contact-list__label">Email us</span><a href="mailto:janiece@leaderflow.org">janiece@leaderflow.org</a></div>
+        </li>
+        <li>
+          <span class="contact-list__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></span>
+          <div><span class="contact-list__label">Follow us</span><a href="https://www.linkedin.com/company/leaderflow/">LinkedIn</a><span class="contact-list__sep" aria-hidden="true">·</span><a href="https://www.instagram.com/_leaderflow/">Instagram</a></div>
+        </li>
+      </ul>
+    </div>
+    <div class="form-card form-card--hero">
+      <h2 class="form-card__title">Start a discussion</h2>
+      <!-- FORM (M9, front end only). data-endpoint stays empty until the Pages Function /api/contact exists;
+           JS then posts there. Without JS the browser validates and posts to action="/api/contact".
+           The Function must re-check everything: required fields, lengths, honeypot ("website"), Turnstile. -->
+      <form class="form form--2col" action="/api/contact" method="post" data-endpoint="" data-form="contact">
+        <div class="field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required maxlength="254"></div>
+        <div class="field field--full"><label for="contact-phone">Phone <span class="opt">(optional)</span></label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></div>
+        <div class="field field--full"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" required maxlength="5000"></textarea></div>
+        <div class="form__hp" aria-hidden="true"><label for="contact-website">Leave this field empty</label><input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="100"></div>
+        <!-- TURNSTILE: the widget renders here (managed mode, loaded on first focus; see site.js). No site key yet. -->
+        <div class="form__turnstile field--full" data-turnstile-slot></div>
+        <div class="form__actions field--full"><button class="btn btn--submit" type="submit">Send message<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><p class="form__status" role="status" aria-live="polite"></p></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer bp">
+  <svg class="flow draw flow--footer" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <img src="../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231" loading="lazy">
+    </div>
+    <div>
+      <h2 class="footer__title">Connect With Us</h2>
+      <ul class="footer__social">
+        <li><a href="https://www.linkedin.com/company/leaderflow/" aria-label="LeaderFlow on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+        <li><a href="https://www.instagram.com/_leaderflow/" aria-label="LeaderFlow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="footer__subscribe">
+      <h2 class="footer__title">Subscribe</h2>
+      <p>Subscribe to keep up to date with upcoming sessions and application windows.</p>
+      <a class="btn btn--ghost-light btn--sm" href="https://eepurl.com/ivZ0H6">Subscribe</a>
+    </div>
+  </div>
+  <div class="container"><div class="footer__bottom">
+    <ul class="footer__links">
+      <li><a href="../about-us/">About</a></li>
+      <li><a href="../leaderflow-development-program/">Development Program</a></li>
+      <li><a href="../flowcilitators/become-a-flowcilitator/">Flowcilitators</a></li>
+      <li><a href="../become-a-sponsor/">Sponsor</a></li>
+      <li><a href="../connect-with-us/">Connect</a></li>
+    </ul>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+  </div></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Local secrets and Wrangler's local database/state
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/
+
+# Tooling
+node_modules/
+.check-out/

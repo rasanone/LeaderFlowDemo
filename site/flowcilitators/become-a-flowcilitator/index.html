@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Become a Flowcilitator – LeaderFlow</title>
+<meta name="description" content="Lead one or more sessions in the LeaderFlow Development Program as a Flowcilitator.">
+<link rel="canonical" href="https://leaderflow.org/flowcilitators/become-a-flowcilitator/">
+<meta name="theme-color" content="#0b2447">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/img/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="preload" href="../../assets/fonts/fraunces-roman-v1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../assets/fonts/inter-v1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script defer src="../../assets/js/site.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="../../" aria-label="LeaderFlow home"><img src="../../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-1">
+            <li><a href="../../leaderflow-development-program/">Program Overview</a></li>
+            <li><a href="../../leaderflow-development-program/application-process/">Application Process</a></li>
+            <li><a href="../../leaderflow-development-program/application-form/">Application Form</a></li>
+            <li><a href="../../leaderflow-development-program/leaderflow-graduates/">LeaderFlow Graduates</a></li>
+            <li><a href="../../leaderflow-development-program/participantfaqs/">Frequently Asked Questions</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--has-sub is-current">
+          <a class="nav__link" href="../../flowcilitators/become-a-flowcilitator/">Flowcilitators</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-2"><span class="visually-hidden">Flowcilitators menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-2">
+            <li><a href="../../flowcilitators/become-a-flowcilitator/" aria-current="page">Become a Flowcilitator</a></li>
+            <li><a href="../../flowcilitators/meet-the-flowcilitators/">Meet the Flowcilitators</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="../../become-a-sponsor/">Sponsor</a></li>
+        <li class="nav__item"><a class="nav__link" href="../../connect-with-us/">Connect</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold btn--sm header-cta" href="../../donate/">Donate</a>
+  </div>
+</header>
+<main id="main">
+<!-- Form-first page: the inquiry form sits in the first view; the details follow below it. -->
+<section class="form-hero form-hero--long bp">
+  <div class="container form-hero__inner">
+    <div class="form-hero__text">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li>Flowcilitators</li><li aria-current="page">Become a Flowcilitator</li></ol></nav>
+      <h1>Become a Flowcilitator</h1>
+      <p class="form-hero__lede">Fill out and submit the form to inquire about becoming a Flowcilitator.</p>
+      <ul class="jump-links">
+        <li><a href="#role">The role</a></li>
+        <li><a href="#qualifications">Qualifications</a></li>
+        <li><a href="#training">Orientation &amp; training</a></li>
+      </ul>
+    </div>
+    <div class="form-card form-card--hero">
+      <h2 class="form-card__title">Flowcilitator inquiry</h2>
+      <!-- FORM (M9, front end only). data-endpoint stays empty until the Pages Function /api/flowcilitator exists;
+           JS then posts there. Without JS the browser validates and posts to action="/api/flowcilitator".
+           The Function must re-check everything: required fields, lengths, honeypot ("website"), Turnstile.
+           "sessions" can now arrive more than once (one value per ticked session). -->
+      <form class="form form--2col" action="/api/flowcilitator" method="post" data-endpoint="" data-form="flowcilitator">
+        <div class="field"><label for="fl-name">Name</label><input id="fl-name" name="applicant_name" type="text" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label for="fl-email">Email</label><input id="fl-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required maxlength="254"></div>
+        <div class="field"><label for="fl-phone">Phone</label><input id="fl-phone" name="phone" type="tel" autocomplete="tel" required maxlength="30"></div>
+        <div class="field"><label for="fl-firm">Firm name</label><input id="fl-firm" name="firm_name" type="text" autocomplete="organization" required maxlength="150"></div>
+        <div class="field field--full">
+          <span class="field__label" id="fl-sessions-label">Sessions of interest <span class="opt">(optional)</span></span>
+          <details class="multi" data-multi>
+            <summary class="multi__summary"><span class="visually-hidden">Sessions of interest: </span><span data-multi-text>Choose one or more</span></summary>
+            <fieldset class="multi__panel" aria-labelledby="fl-sessions-label">
+              <label class="check"><input type="checkbox" name="sessions" value="Building Trust, Growth-Mindset, Strengths"><span>Building Trust, Growth-Mindset, Strengths</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Total Leadership &amp; Work-Life Integration"><span>Total Leadership &amp; Work-Life Integration</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Emotional Intelligence"><span>Emotional Intelligence</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Crucial Conversations"><span>Crucial Conversations</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Project Leadership &amp; Client Development"><span>Project Leadership &amp; Client Development</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Financial Aspects of a Project &amp; Practice"><span>Financial Aspects of a Project &amp; Practice</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Firm &amp; Practice Leadership"><span>Firm &amp; Practice Leadership</span></label>
+            </fieldset>
+          </details>
+        </div>
+        <div class="field field--full"><label for="fl-why">Why do you want to become a Flowcilitator? <span class="opt">(optional)</span></label><textarea id="fl-why" name="why" rows="3" maxlength="3000"></textarea></div>
+        <div class="field"><label for="fl-edu">Education / background <span class="opt">(optional)</span></label><textarea id="fl-edu" name="education" rows="2" maxlength="3000"></textarea></div>
+        <div class="field"><label for="fl-msg">Other comments <span class="opt">(optional)</span></label><textarea id="fl-msg" name="message" rows="2" maxlength="3000"></textarea></div>
+        <div class="form__hp" aria-hidden="true"><label for="fl-website">Leave this field empty</label><input id="fl-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="100"></div>
+        <!-- TURNSTILE: the widget renders here (managed mode, loaded on first focus; see site.js). No site key yet. -->
+        <div class="form__turnstile field--full" data-turnstile-slot></div>
+        <div class="form__actions field--full"><button class="btn btn--submit" type="submit">Send inquiry<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><p class="form__status" role="status" aria-live="polite"></p></div>
+      </form>
+    </div>
+  </div>
+  <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
+</section>
+
+<section class="section" id="role">
+  <div class="container">
+    <div class="section-head reveal">
+      <h2>Join us and lead one or more sessions in our LeaderFlow Development Program.</h2>
+      <p class="lede">LeaderFlow takes a comprehensive approach to leadership development within the AEC industry, addressing the challenges that many professionals face in advancing their careers. We provide a psychologically safe environment where seasoned industry leaders can engage with LeaderFlow cohorts, fostering meaningful dialogue and driving positive change across all organizational levels.</p>
+    </div>
+    <div class="grid grid--2">
+      <div class="form-card reveal">
+        <p>As a <strong>Flowcilitator</strong> you will have an opportunity to:</p>
+        <ul class="ticks ticks--lg">
+          <li>Collaborate with other AEC industry leaders to explore effective leadership strategies.</li>
+          <li>Engage in personal development and lead professional development to help transform workplace culture.</li>
+          <li>Attend the LeaderFlow Development Program Flowcilitator Orientation and Training Program and become certified in The “Flowcilitator” Framework: A Model For Inclusive Facilitation.</li>
+        </ul>
+      </div>
+      <div class="form-card reveal" id="qualifications">
+        <h2 class="title-sm">Flowcilitator Qualifications</h2>
+        <p><strong>We look for the following criteria in our Flowcilitators:</strong></p>
+        <ul class="ticks ticks--lg">
+          <li>Established leaders in your respective field</li>
+          <li>A demonstrated interest in fostering leadership growth at your workplace.</li>
+          <li>Strong communication and presentation skills</li>
+          <li>Strong ability to lead, motivate, and engage cohort participants</li>
+          <li>Attend the Flowcilitator Orientation and Training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper" id="training">
+  <div class="container split split--wide-text">
+    <div class="prose reveal">
+      <h2>The Flowcilitator Orientation and Training Program</h2>
+      <p>The Flowcilitator Orientation and Training Program is designed for leaders who are ready to make the bold moves necessary to center equity within their organizations, spark sustainable work, and inspire people – including colleagues and external partners – to join them in building a vibrant and inclusive future. The “Flowcilitator” framework: A Model For Inclusive Facilitation was developed in partnership with Rooted Consulting Group.</p>
+      <p><em>After participating in the Flowcilitator Orientation and Training Program, you will be able to:</em></p>
+      <ul class="ticks ticks--lg">
+        <li>Increase your skills as a facilitator, and learn how to effectively lead and facilitate a conversation or meeting with equity and inclusion in mind</li>
+        <li>Examine best practices for managing and facilitating difficult conversations.</li>
+        <li>Demonstrate techniques to support constructive dialogue between groups and effectively communicate with others during high-stakes and challenging conversations.</li>
+        <li>Join with other training participants to lay the foundation of a new network of AEC leaders dedicated to establishing equity as a firm practice.</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="framed framed--3x2"><img src="../../assets/img/photo/leader-2.webp" alt="A facilitator leading a conversation" width="750" height="500" loading="lazy" decoding="async"></div>
+      <ul class="logos logos--lg logos--single mt-lg"><li><img src="../../assets/img/logo/rooted.webp" alt="Rooted Consulting Group" width="203" height="74" loading="lazy" decoding="async"></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight cta-inline">
+  <div class="container cta-inline__inner">
+    <h2 class="title-sm">Ready to lead a session?</h2>
+    <a class="btn btn--arrow" href="#main">Back to the inquiry form</a>
+  </div>
+</section>
+</main>
+<footer class="site-footer bp">
+  <svg class="flow draw flow--footer" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <img src="../../assets/img/brand/logo-white.webp" alt="LeaderFlow" width="576" height="231" loading="lazy">
+    </div>
+    <div>
+      <h2 class="footer__title">Connect With Us</h2>
+      <ul class="footer__social">
+        <li><a href="https://www.linkedin.com/company/leaderflow/" aria-label="LeaderFlow on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a></li>
+        <li><a href="https://www.instagram.com/_leaderflow/" aria-label="LeaderFlow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="footer__subscribe">
+      <h2 class="footer__title">Subscribe</h2>
+      <p>Subscribe to keep up to date with upcoming sessions and application windows.</p>
+      <a class="btn btn--ghost-light btn--sm" href="https://eepurl.com/ivZ0H6">Subscribe</a>
+    </div>
+    <a class="to-top" href="#main" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></a>
+  </div>
+  <div class="container"><div class="footer__bottom">
+    <ul class="footer__links">
+      <li><a href="../../about-us/">About</a></li>
+      <li><a href="../../leaderflow-development-program/">Development Program</a></li>
+      <li><a href="../../flowcilitators/become-a-flowcilitator/">Flowcilitators</a></li>
+      <li><a href="../../become-a-sponsor/">Sponsor</a></li>
+      <li><a href="../../connect-with-us/">Connect</a></li>
+    </ul>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+  </div></div>
+</footer>
+</body>
+</html>

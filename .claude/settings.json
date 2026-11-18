@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.dev.vars)",
+      "Read(./.dev.vars.*)",
+      "Edit(./.dev.vars)",
+      "Bash(cat .dev.vars*)",
+      "Bash(type .dev.vars*)",
+      "Bash(more .dev.vars*)",
+      "Bash(head .dev.vars*)",
+      "Bash(tail .dev.vars*)",
+      "Bash(less .dev.vars*)",
+      "Bash(grep * .dev.vars*)",
+      "Bash(npx wrangler pages secret *)",
+      "Bash(wrangler pages secret *)",
+      "PowerShell(Get-Content *.dev.vars*)",
+      "PowerShell(cat *.dev.vars*)",
+      "PowerShell(type *.dev.vars*)"
+    ]
+  }
+}

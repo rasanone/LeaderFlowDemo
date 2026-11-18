@@ -1,0 +1,952 @@
+[
+{
+"slug": "2025-los-angeles-chieh-ting-chuang",
+"name": "Chieh-Ting Chuang",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2025-los-angeles-christian-tellez",
+"name": "Christian Tellez",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-los-angeles-cynthia-nei",
+"name": "Cynthia Nei",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-los-angeles-dolores-robles-martinez",
+"name": "Dolores Robles Martinez",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-los-angeles-esther-chao",
+"name": "Esther Chao",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-los-angeles-george-jang",
+"name": "George Jang",
+"max": 452,
+"ws": [
+240,
+360,
+452
+]
+},
+{
+"slug": "2025-los-angeles-jocelyn-la-chance",
+"name": "Jocelyn La Chance",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2025-los-angeles-jorge-gallegos",
+"name": "Jorge Gallegos",
+"max": 478,
+"ws": [
+240,
+360,
+478
+]
+},
+{
+"slug": "2025-los-angeles-krystie-ortencio",
+"name": "Krystie Ortencio",
+"max": 410,
+"ws": [
+240,
+360,
+410
+]
+},
+{
+"slug": "2025-los-angeles-lily-hao",
+"name": "Lily Hao",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2025-los-angeles-neda-rad",
+"name": "Neda Rad",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-los-angeles-sabrina-yuen",
+"name": "Sabrina Yuen",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-los-angeles-shakari-mcgill",
+"name": "Shakari McGill",
+"max": 438,
+"ws": [
+240,
+360,
+438
+]
+},
+{
+"slug": "2025-los-angeles-sylvia-richardson",
+"name": "Sylvia Richardson",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-los-angeles-yu-hsuan-yosh-lin",
+"name": "Yu-Hsuan Yosh Lin",
+"max": 402,
+"ws": [
+240,
+360,
+402
+]
+},
+{
+"slug": "2025-seattle-aaron-r-hale",
+"name": "Aaron R. Hale",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-seattle-aparna-pillai",
+"name": "Aparna Pillai",
+"max": 459,
+"ws": [
+240,
+360,
+459
+]
+},
+{
+"slug": "2025-seattle-curtis-ma",
+"name": "Curtis Ma",
+"max": 464,
+"ws": [
+240,
+360,
+464
+]
+},
+{
+"slug": "2025-seattle-geethika-yarlagadda",
+"name": "Geethika Yarlagadda",
+"max": 447,
+"ws": [
+240,
+360,
+447
+]
+},
+{
+"slug": "2025-seattle-jason-w-jones",
+"name": "Jason W. Jones",
+"max": 415,
+"ws": [
+240,
+360,
+415
+]
+},
+{
+"slug": "2025-seattle-jenny-hong",
+"name": "Jenny Hong",
+"max": 472,
+"ws": [
+240,
+360,
+472
+]
+},
+{
+"slug": "2025-seattle-mel-isidor",
+"name": "Mel Isidor",
+"max": 442,
+"ws": [
+240,
+360,
+442
+]
+},
+{
+"slug": "2025-seattle-muhammad-arar",
+"name": "Muhammad Arar",
+"max": 455,
+"ws": [
+240,
+360,
+455
+]
+},
+{
+"slug": "2025-seattle-pearl-hanna",
+"name": "Pearl Hanna",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-seattle-rei-schultz",
+"name": "Rei Schultz",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-seattle-sneha-murali",
+"name": "Sneha Murali",
+"max": 404,
+"ws": [
+240,
+360,
+404
+]
+},
+{
+"slug": "2025-seattle-sophie-haddad",
+"name": "Sophie Haddad",
+"max": 451,
+"ws": [
+240,
+360,
+451
+]
+},
+{
+"slug": "2025-seattle-sunny-zhang",
+"name": "Sunny Zhang",
+"max": 435,
+"ws": [
+240,
+360,
+435
+]
+},
+{
+"slug": "2025-seattle-valerie-riccio",
+"name": "Valerie Riccio",
+"max": 440,
+"ws": [
+240,
+360,
+440
+]
+},
+{
+"slug": "2025-houston-camille-jackson",
+"name": "Camille Jackson",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-houston-fernanda-reyes-wachowski",
+"name": "Fernanda Reyes Wachowski",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-houston-henry-castro",
+"name": "Henry Castro",
+"max": 430,
+"ws": [
+240,
+360,
+430
+]
+},
+{
+"slug": "2025-houston-hilda-navas-moreno",
+"name": "Hilda Navas-Moreno",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-houston-ilitch-aguiar",
+"name": "Ilitch Aguiar",
+"max": 445,
+"ws": [
+240,
+360,
+445
+]
+},
+{
+"slug": "2025-houston-karen-reeder",
+"name": "Karen Reeder",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-houston-ligy-abraham",
+"name": "Ligy Abraham",
+"max": 442,
+"ws": [
+240,
+360,
+442
+]
+},
+{
+"slug": "2025-houston-luis-f-arruti",
+"name": "Luis F. Arruti",
+"max": 417,
+"ws": [
+240,
+360,
+417
+]
+},
+{
+"slug": "2025-houston-roya-abyaneh",
+"name": "Roya Abyaneh",
+"max": 460,
+"ws": [
+240,
+360,
+460
+]
+},
+{
+"slug": "2025-houston-shannon-oliveira",
+"name": "Shannon Oliveira",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-houston-sam-marvdashti",
+"name": "Sam Marvdashti",
+"max": 414,
+"ws": [
+240,
+360,
+414
+]
+},
+{
+"slug": "2025-new-york-blake-lin",
+"name": "Blake Lin",
+"max": 416,
+"ws": [
+240,
+360,
+416
+]
+},
+{
+"slug": "2025-new-york-bradley-debose",
+"name": "Bradley DeBose",
+"max": 414,
+"ws": [
+240,
+360,
+414
+]
+},
+{
+"slug": "2025-new-york-eric-tan",
+"name": "Eric Tan",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-new-york-fernando-astiazaran",
+"name": "Fernando Astiazaran",
+"max": 410,
+"ws": [
+240,
+360,
+410
+]
+},
+{
+"slug": "2025-new-york-freddo-daneshvaran",
+"name": "Freddo Daneshvaran",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-new-york-gawon-shin",
+"name": "Gawon Shin",
+"max": 420,
+"ws": [
+240,
+360,
+420
+]
+},
+{
+"slug": "2025-new-york-jennifer-mahan",
+"name": "Jennifer Mahan",
+"max": 440,
+"ws": [
+240,
+360,
+440
+]
+},
+{
+"slug": "2025-new-york-katiuska-medrano",
+"name": "Katiuska Medrano",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-new-york-louay-serour",
+"name": "Louay Serour",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-new-york-marli-mata",
+"name": "Marli Mata",
+"max": 410,
+"ws": [
+240,
+360,
+410
+]
+},
+{
+"slug": "2025-new-york-miriam-huston",
+"name": "Miriam Huston",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-new-york-roslyn-stapleton",
+"name": "Roslyn Stapleton",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-new-york-saad-mostafa",
+"name": "Saad Mostafa",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-new-york-vishwadeep-deo",
+"name": "Vishwadeep Deo",
+"max": 430,
+"ws": [
+240,
+360,
+430
+]
+},
+{
+"slug": "2025-chicago-analiese-lasky",
+"name": "Analiese Lasky",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-bri-shae-anderson",
+"name": "Bri\u2019Shae Anderson",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-edward-blackmon-jr",
+"name": "Edward Blackmon Jr.",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-ezra-arif-edwin",
+"name": "Ezra Arif Edwin",
+"max": 458,
+"ws": [
+240,
+360,
+458
+]
+},
+{
+"slug": "2025-chicago-mariella-ochoa",
+"name": "Mariella Ochoa",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-mayren-mata",
+"name": "Mayren Mata",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2025-chicago-mijung-ko",
+"name": "Mijung Ko",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-rick-gutierrez",
+"name": "Rick Gutierrez",
+"max": 446,
+"ws": [
+240,
+360,
+446
+]
+},
+{
+"slug": "2025-chicago-ricardo-anguiano",
+"name": "Ricardo Anguiano",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-tayo-odunlami",
+"name": "Tayo Odunlami",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2025-chicago-vinicius-de-paula",
+"name": "Vinicius De Paula",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2024-los-angeles-janisha-johnson",
+"name": "Janisha Johnson",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2024-los-angeles-sherry-dadci",
+"name": "Sherry Dadci",
+"max": 425,
+"ws": [
+240,
+360,
+425
+]
+},
+{
+"slug": "2024-los-angeles-mengying-bai",
+"name": "Mengying Bai",
+"max": 427,
+"ws": [
+240,
+360,
+427
+]
+},
+{
+"slug": "2024-los-angeles-nicholas-awori",
+"name": "Nicholas Awori",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-los-angeles-summer-su",
+"name": "Summer Su",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2024-los-angeles-wei-tse-yuan",
+"name": "Wei-Tse Yuan",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-los-angeles-whitney-byrd",
+"name": "Whitney Byrd",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-los-angeles-courtney-wladyka",
+"name": "Courtney Wladyka",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2024-los-angeles-rita-bagala",
+"name": "Rita Bagala",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-chris-parker",
+"name": "Chris Parker",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2024-seattle-cierra-higgins",
+"name": "Cierra Higgins",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-deborah-ndomba",
+"name": "Deborah Ndomba",
+"max": 461,
+"ws": [
+240,
+360,
+461
+]
+},
+{
+"slug": "2024-seattle-francesca-krisli",
+"name": "Francesca Krisli",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-jingyi-feng",
+"name": "Jingyi Feng",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-jordan-miyahara",
+"name": "Jordan Miyahara",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-julian-uribe",
+"name": "Julian Uribe",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-kunal-vaswani",
+"name": "Kunal Vaswani",
+"max": 441,
+"ws": [
+240,
+360,
+441
+]
+},
+{
+"slug": "2024-seattle-amy-kuo",
+"name": "Amy Kuo",
+"max": 463,
+"ws": [
+240,
+360,
+463
+]
+},
+{
+"slug": "2024-seattle-marcus-freeman",
+"name": "Marcus Freeman",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-rio-namiki",
+"name": "Rio Namiki",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-shirin-masoudi",
+"name": "Shirin Masoudi",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-seattle-yomi-adeyemi",
+"name": "Yomi Adeyemi",
+"max": 412,
+"ws": [
+240,
+360,
+412
+]
+},
+{
+"slug": "2024-houston-andres-araiza",
+"name": "Andres Araiza",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-houston-dee-sylvan",
+"name": "Dee Sylvan",
+"max": 402,
+"ws": [
+240,
+360,
+402
+]
+},
+{
+"slug": "2024-houston-dee-watson",
+"name": "Dee Watson",
+"max": 406,
+"ws": [
+240,
+360,
+406
+]
+},
+{
+"slug": "2024-houston-diana-gonzalez",
+"name": "Diana Gonzalez",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2024-houston-meaghan-williams",
+"name": "Meaghan Williams",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-houston-jayla-huseyn",
+"name": "Jayla Huseyn",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-houston-paris-woods",
+"name": "Paris Woods",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+},
+{
+"slug": "2024-houston-priscilla-nguyen",
+"name": "Priscilla Nguyen",
+"max": 448,
+"ws": [
+240,
+360,
+448
+]
+},
+{
+"slug": "2024-houston-tim-uzoigwe",
+"name": "Tim Uzoigwe",
+"max": 360,
+"ws": [
+240,
+360
+]
+},
+{
+"slug": "2024-houston-william-imbeah",
+"name": "William Imbeah",
+"max": 480,
+"ws": [
+240,
+360,
+480
+]
+}
+]
