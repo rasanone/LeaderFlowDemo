@@ -12,18 +12,18 @@ ARROW = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-widt
 OPT = ' <span class="opt">(optional)</span>'
 
 CITIES = ['Houston', 'Los Angeles', 'Seattle', 'New York', 'Chicago']
-GENDER = ['Man', 'Woman', 'Non-binary']
-PRONOUNS = ['He/Him', 'She/Her', 'They/Them', 'Any']
+GENDER = ['Man', 'Woman', 'Non-binary', 'Prefer not to say']
+PRONOUNS = ['He/Him', 'She/Her', 'They/Them', 'Any pronouns', 'Prefer not to say']
 # TBC: the live form has 6 ethnicity options; their exact wording wasn't captured. These are placeholders.
 ETHNICITY = ['American Indian or Alaska Native', 'Asian', 'Black or African American', 'Hispanic or Latino',
-             'Native Hawaiian or Pacific Islander', 'White']
-FIRM_SIZE = ['1–50', '51–100', '101–200', '200+']
+             'Native Hawaiian or Pacific Islander', 'White', 'Two or more', 'Prefer not to say']
+FIRM_SIZE = ['1–50', '51–100', '101–200', '201+']
 STATES = ('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH '
           'OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY').split()
 QUESTIONS = [  # (field name, question, max words)
     ('q_capacity', 'What leadership capacity do you most hope to strengthen through this program, and how do you envision applying it in your work or community?', 250),
     ('q_why_now', 'Why are you applying to LeaderFlow at this stage of your career? What motivates you to grow as a leader now?', 300),
-    ('q_commitment', 'How will you ensure you can meet this commitment while managing the time, energy, and accountability required by the program (including balancing work, travel, assignments, and cohort interactions)?', 200),
+    ('q_commitment', 'The program requires in-person attendance at every group session. How will you ensure you can meet this commitment while managing the time, energy, and accountability required by the program (including balancing work, travel, assignments, and cohort interactions)?', 200),
     ('q_vulnerability', 'How do you approach vulnerability and mutual support in group settings?', 200),
     ('q_perspective', 'What unique perspective, experience, or resource do you hope to bring to your cohort peers?', 150),
     ('q_dream', 'Dream a little: if you were equipped with essential leadership tools, a supportive network, and the ability to recognize and act on emerging opportunities, what impact would you hope to make in your career and community?', 250),
@@ -97,7 +97,7 @@ steps = [
         choices('ethnicity', 'Ethnicity', ETHNICITY, req=False, cls='choices--2col'),
     ])),
     ('step-city', 'Program city',
-     'Choose the city where you would attend every session. <a href="../../">Session dates for each city</a> are on the program page.',
+     'Choose the city where you would attend every session.',
      choices('program_city', 'Which city are you applying for?', CITIES, cls='choices--cards')),
     ('step-address', 'Mailing address', '', ''.join([
         text('ap-street', 'street', 'Street address', auto='street-address', full=True),

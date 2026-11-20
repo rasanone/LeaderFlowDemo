@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="about-us/">About Us</a></li>
+            <li><a href="impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub">
           <a class="nav__link" href="leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -73,7 +79,7 @@
     </p>
     <div class="btn-row">
       <a class="btn btn--gold btn--arrow" href="leaderflow-development-program/application-form/">Apply</a>
-      <a class="btn btn--ghost-light" href="about-us/">About Us</a>
+      <a class="btn btn--ghost-light" href="about-us/">About us</a>
     </div>
     <!-- Application status: both versions are here; the APPLICATIONS SWITCH in site.css shows one. -->
     <div class="hero-status apps-closed">
@@ -126,58 +132,53 @@
 
 <section class="section" id="program">
   <div class="container">
-    <div class="intro">
-      <div class="reveal">
+    <div class="program-intro">
+      <div class="program-intro__text reveal">
         <h3 class="eyebrow">LeaderFlow Development Program</h3>
-        <h2 class="display">Preparing diverse professionals to lead in the architecture, engineering and construction (AEC) industry</h2>
+        <h2 class="program-intro__title">Preparing diverse professionals to lead in the architecture, engineering and construction (AEC) industry</h2>
+        <p class="lede">We offer a 7-month curriculum that focuses on personal growth, increased awareness of self and others, strengthened community, and improved skills in management and leadership <strong>at no cost to participants</strong>.</p>
+        <div class="btn-row"><a class="btn btn--arrow" href="leaderflow-development-program/">Development Program</a></div>
       </div>
-      <div class="reveal">
-        <p class="lede">We offer a 7-month curriculum that focuses on personal growth, increased awareness of self and others, strengthened community, and improved skills in management and leadership <strong>at no cost to participants</strong>. Our integrated program includes the following:</p>
+      <div class="program-intro__media reveal">
+        <div class="framed framed--photo"><img src="assets/img/photo/hero-closing-gap-713.webp" alt="Participants in conversation at a LeaderFlow session" width="713" height="570" loading="lazy" decoding="async"></div>
+        <ul class="program-facts" aria-label="Program at a glance">
+          <li><strong>7-month</strong> curriculum</li>
+          <li><strong>No cost</strong> to participants</li>
+        </ul>
       </div>
     </div>
-    <!-- Program pillars. On reveal the cards rise in turn, a gold line draws across each card's top edge and its icon
-         draws itself in; hovering moves a soft light with the pointer (site.js sets --mx/--my). -->
-    <div class="bento mt-lg" data-spotlight>
+    <p class="pillars-head reveal">Our integrated program includes</p>
+    <!-- Program pillars. On reveal the cards rise in turn and each icon draws itself in;
+         hovering moves a soft light with the pointer (site.js sets --mx/--my). -->
+    <div class="bento bento--four" data-spotlight>
       <div class="tile tile--ink bp reveal">
-        <span class="tile__line" aria-hidden="true"></span><span class="tile__glow" aria-hidden="true"></span>
+        <span class="tile__glow" aria-hidden="true"></span>
         <div class="tile__top"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M2 3h20"/><path pathLength="1" d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path pathLength="1" d="m7 21 5-5 5 5"/></svg></span><span class="tile__num">01</span></div>
         <div class="tile__body"><h3>Training &amp; Coaching</h3><p>Learn vital leadership skills</p></div>
       </div>
-      <div class="tile tile--photo reveal">
-        <img src="assets/img/photo/leader-1.webp" alt="Participants reviewing program materials together" width="750" height="500" loading="lazy" decoding="async">
-        <span class="tile__line" aria-hidden="true"></span><span class="tile__glow" aria-hidden="true"></span>
+      <div class="tile tile--gold reveal">
+        <span class="tile__glow" aria-hidden="true"></span>
         <div class="tile__top"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M7 20h10"/><path pathLength="1" d="M10 20c5.5-2.5.8-6.4 3-10"/><path pathLength="1" d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path pathLength="1" d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg></span><span class="tile__num">02</span></div>
-        <div class="tile__body"><h3>Personal Growth &amp; Awareness</h3></div>
+        <div class="tile__body"><h3>Personal Growth &amp; Awareness</h3><p>Discover your strengths and build a personal leadership philosophy</p></div>
       </div>
       <div class="tile reveal">
-        <span class="tile__line" aria-hidden="true"></span><span class="tile__glow" aria-hidden="true"></span>
+        <span class="tile__glow" aria-hidden="true"></span>
         <div class="tile__top"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle pathLength="1" cx="9" cy="7" r="4"/><path pathLength="1" d="M22 21v-2a4 4 0 0 0-3-3.87"/><path pathLength="1" d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="tile__num">03</span></div>
         <div class="tile__body"><h3>Community Building</h3><p>Build connections with industry leaders and other mid-career AEC professionals</p></div>
       </div>
       <div class="tile reveal">
-        <span class="tile__line" aria-hidden="true"></span><span class="tile__glow" aria-hidden="true"></span>
+        <span class="tile__glow" aria-hidden="true"></span>
         <div class="tile__top"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="m11 17 2 2a1 1 0 1 0 3-3"/><path pathLength="1" d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path pathLength="1" d="m21 3 1 11h-2"/><path pathLength="1" d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path pathLength="1" d="M3 4h8"/></svg></span><span class="tile__num">04</span></div>
-        <div class="tile__body"><h3>Mentorship</h3><p>Build connections with industry leaders</p></div>
-      </div>
-      <div class="tile tile--gold reveal">
-        <span class="tile__line" aria-hidden="true"></span><span class="tile__glow" aria-hidden="true"></span>
-        <div class="tile__top"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path pathLength="1" d="M22 10v6"/><path pathLength="1" d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="tile__num">05</span></div>
-        <div class="tile__body"><h3>Continuing Education</h3><p>Earn credits currently provided through AIA.</p></div>
+        <div class="tile__body"><h3>Mentorship</h3><p>Learn from Flowcilitators who mentor and advocate beyond the program</p></div>
       </div>
     </div>
-    <p class="pull reveal">Join us and embark on a transformative journey tailored to individuals at all levels of their career. Acquire practice skills, foster personal growth, enhance your professional expertise, accelerate your career advancement, and discover the immense potential within you through our comprehensive program!</p>
-  </div>
-</section>
-
-<section class="section section--paper" id="closing-the-gap">
-  <div class="container split split--reverse">
-    <div class="reveal">
-      <h2 class="display">Closing the Gap to Advancement</h2>
-      <p class="lede">Leadership development training and mentorship to take you further in your personal life and career.</p>
-      <div class="btn-row"><a class="btn btn--arrow" href="leaderflow-development-program/">Development Program</a></div>
-    </div>
-    <div class="reveal">
-      <div class="framed framed--angle"><img src="assets/img/photo/hero-closing-gap.webp" alt="Participants in conversation at a LeaderFlow session" width="1010" height="627" loading="lazy"></div>
+    <!-- Closing invitation for the section: the first sentence as a large statement, the rest beside it with the next step. -->
+    <div class="invite reveal">
+      <p class="invite__lead">Join us and embark on a <span class="invite__hl">transformative journey</span> tailored to individuals at all levels of their career.</p>
+      <div class="invite__side">
+        <p>Acquire practical skills, foster personal growth, enhance your professional expertise, accelerate your career advancement, and discover the immense potential within you through our comprehensive program!</p>
+        <div class="btn-row"><a class="btn btn--arrow" href="leaderflow-development-program/application-process/">How to apply</a></div>
+      </div>
     </div>
   </div>
 </section>
@@ -204,13 +205,13 @@
       <img src="assets/img/brand/icon-person-flag.webp" alt="" width="120" height="120" loading="lazy" decoding="async" class="panel__icon">
       <h2>Donate to LeaderFlow</h2>
       <p>The LeaderFlow Development Program is provided at <strong>no cost to the participants</strong>. Please consider supporting our efforts by donating to our program.</p>
-      <a class="btn btn--gold btn--arrow" href="donate/">Click to Donate</a>
+      <a class="btn btn--gold btn--arrow" href="donate/">Donate</a>
     </div>
     <div class="panel panel--paper reveal">
       <img src="assets/img/brand/icon-person-flag.webp" alt="" width="120" height="120" loading="lazy" decoding="async" class="panel__icon">
       <h2>Become a Sponsor</h2>
       <p>LeaderFlow’s Sponsors will help to be a part of building this organization and providing the LeaderFlow Development Program on a national level at no cost to participants.</p>
-      <a class="btn btn--arrow" href="become-a-sponsor/">Support LeaderFlow</a>
+      <a class="btn btn--arrow" href="become-a-sponsor/">Become a sponsor</a>
     </div>
   </div>
 </section>
@@ -344,7 +345,7 @@
       <li><a href="become-a-sponsor/">Sponsor</a></li>
       <li><a href="connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

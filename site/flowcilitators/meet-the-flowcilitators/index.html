@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../../about-us/">About Us</a></li>
+            <li><a href="../../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub">
           <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -56,10 +62,10 @@
 <section class="page-hero bp">
   <div class="container page-hero__inner">
     <div class="page-hero__text">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li aria-current="page">Flowcilitators</li><li aria-current="page">Meet the Flowcilitators</li></ol></nav>
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li>Flowcilitators</li><li aria-current="page">Meet the Flowcilitators</li></ol></nav>
       <h1>Meet the Flowcilitators</h1>
     </div>
-    <div class="page-hero__media"><picture><source media="(min-width: 760px)" srcset="../../assets/img/photo/hdr-group-table-1040.webp" width="1040" height="417"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1040" height="417"></picture></div>
+    <div class="page-hero__media"><img src="../../assets/img/photo/leader-2.webp" alt="" width="750" height="500" decoding="async" class="pos-top"></div>
   </div>
   <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
 </section>
@@ -67,17 +73,21 @@
 <section class="section">
   <div class="container">
     <p class="lede section-head reveal">Our Flowcilitators are seasoned professionals committed to sharing their wealth of expertise and experience with our LeaderFlow cohorts.</p>
+    <figure class="quote quote--feature mb-lg reveal">
+      <blockquote data-words>Participating in LeaderFlow has had a huge impact on me professionally and it has helped me understand how important it is to develop future leaders. We really need to invest in people and their professional growth…I understand the responsibility that I have as a leader to give them the expertise that I’ve learned over the years so they can be successful.</blockquote>
+      <figcaption><strong>Burke Pemberton</strong>CFO | Stok, 2021–2023 Flowcilitator</figcaption>
+    </figure>
     <ul class="people">
       <li class="person reveal">
         <div class="person__photo"><img src="../../assets/img/people/lance-collins.webp" alt="Lance Collins" width="560" height="700" loading="lazy" decoding="async"></div>
         <h3>Lance Collins</h3>
-        <p><strong>Firm:</strong> Partner Energy, Principal | Director</p>
+        <p><strong>Firm:</strong> Partner Energy | Principal, Director</p>
         <p><strong>Program Sessions:</strong> Building Trust, Growth Mindset and Leading through Strengths</p>
       </li>
       <li class="person reveal">
         <div class="person__photo"><img src="../../assets/img/people/jane-carr.webp" alt="Dr. Jane Carr" width="560" height="700" loading="lazy" decoding="async"></div>
         <h3>Dr. Jane Carr</h3>
-        <p><strong>Business:</strong> Focus on Leaders | Principal</p>
+        <p><strong>Firm:</strong> Focus on Leaders | Principal</p>
         <p><strong>Program Sessions:</strong> Building Trust, Growth Mindset and Leading through Strengths</p>
       </li>
       <li class="person reveal">
@@ -89,7 +99,7 @@
       <li class="person reveal">
         <div class="person__photo"><img src="../../assets/img/people/sonal-sheth-zawahri.webp" alt="Sonal Sheth Zawahri" width="560" height="700" loading="lazy" decoding="async"></div>
         <h3>Sonal Sheth Zawahri</h3>
-        <p><strong>Business:</strong> Tru You LLC | Speaker and Trainer</p>
+        <p><strong>Firm:</strong> PerSonal™ | Founder</p>
         <p><strong>Program Sessions:</strong> Emotional Intelligence</p>
       </li>
       <li class="person reveal">
@@ -98,16 +108,10 @@
         <p><strong>Firm:</strong> KPFF Consulting Engineers | Principal</p>
         <p><strong>Program Sessions:</strong> Emotional Intelligence, Crucial Conversations</p>
       </li>
-    </ul>
-    <figure class="quote quote--feature mt-lg mb-lg reveal">
-      <blockquote>Participating in LeaderFlow has had a huge impact on me professionally and it has helped me understand how important it is to develop future leaders. We really need to invest in people and their professional growth…I understand the responsibility that I have as a leader to give them the expertise that I’ve learned over the years so they can be successful.</blockquote>
-      <figcaption><strong>Burke Pemberton</strong>CFO | Stok, 2021 - 2023 Flowcilitator</figcaption>
-    </figure>
-    <ul class="people">
       <li class="person reveal">
         <div class="person__photo"><img src="../../assets/img/people/renee-powers.webp" alt="Renee Powers" width="560" height="700" loading="lazy" decoding="async"></div>
         <h3>Renee Powers</h3>
-        <p><strong>Firm:</strong> DPR Construction | Global Social Responsibility Manager</p>
+        <p><strong>Firm:</strong> DPR Construction | L&amp;D Manager / Elite Facilitator</p>
         <p><strong>Program Sessions:</strong> Crucial Conversations</p>
       </li>
       <li class="person reveal">
@@ -137,7 +141,7 @@
       <li class="person reveal">
         <div class="person__photo"><img src="../../assets/img/people/nikhil-kalghatgi.webp" alt="Nikhil Kalghatgi" width="560" height="700" loading="lazy" decoding="async"></div>
         <h3>Nikhil Kalghatgi</h3>
-        <p><strong>Firm:</strong> KPFF Consulting Engineers | Principal</p>
+        <p><strong>Firm:</strong> KPFF Consulting Engineers | CFO</p>
         <p><strong>Program Sessions:</strong> Financial Aspects of a Project &amp; Practice</p>
       </li>
       <li class="person reveal">
@@ -164,7 +168,7 @@
 
 <section class="section section--flush-top">
   <div class="container">
-    <div class="cta-band bp reveal">
+    <div class="cta-band cta-band--photo bp reveal">
       <img src="../../assets/img/photo/team-bw.webp" alt="" width="1600" height="800" loading="lazy" decoding="async" class="cta-band__bg">
       <h2>Interested in mentoring our cohorts?</h2>
       <a class="btn btn--gold btn--arrow" href="../../flowcilitators/become-a-flowcilitator/">Become a Flowcilitator</a>
@@ -200,7 +204,7 @@
       <li><a href="../../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

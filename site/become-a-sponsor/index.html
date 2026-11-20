@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../about-us/">About Us</a></li>
+            <li><a href="../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub">
           <a class="nav__link" href="../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -56,10 +62,9 @@
 <section class="page-hero bp">
   <div class="container page-hero__inner">
     <div class="page-hero__text">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li aria-current="page">Become a Sponsor</li></ol></nav>
       <h1>Become a Sponsor</h1>
     </div>
-    <div class="page-hero__media"><picture><source media="(min-width: 760px)" srcset="../assets/img/photo/hdr-group-table-1040.webp" width="1040" height="417"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1040" height="417"></picture></div>
+    <div class="page-hero__media"><img src="../assets/img/photo/hero-connect-713.webp" alt="" width="713" height="570" decoding="async" class="pos-top"></div>
   </div>
   <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
 </section>
@@ -68,18 +73,19 @@
   <div class="container">
     <div class="section-head section-head--center reveal">
       <h2>Thank You for Your Support of LeaderFlow</h2>
-      <p class="lede">LeaderFlow, Inc. is a nonprofit charity exempt from Federal income tax under section 501(c)(3) of the Internal Revenue Service Code. Your tax-deductible contribution will help us advance our efforts toward achieving more diverse, equitable, and inclusive leadership in AEC.</p>
+      <p class="lede">LeaderFlow, Inc. is a nonprofit charity exempt from Federal income tax under section 501(c)(3) of the Internal Revenue Code. Your tax-deductible contribution will help us advance our efforts toward achieving more diverse, equitable, and inclusive leadership in AEC.</p>
     </div>
     <h2 class="title-sm center reveal">Two Ways to Support</h2>
     <div class="support-grid mt-0">
       <div class="panel panel--paper reveal">
         <h3>Become a Sponsor of LeaderFlow</h3>
-        <p>See Foundational, National, Platinum, and Gold Sponsorship levels below. <a href="../connect-with-us/"><strong>Contact us directly for donation details.</strong></a></p>
+        <p>See the Foundational, National, Platinum, Gold, and Silver sponsorship levels below, or contact us directly for sponsorship details.</p>
+        <a class="btn btn--arrow" href="../connect-with-us/">Contact us</a>
       </div>
       <div class="panel panel--ink bp reveal">
         <h3>Become a Friend of LeaderFlow</h3>
         <p>For credit/debit donations, click the link below.</p>
-        <a class="btn btn--gold btn--arrow" href="../donate/">Click to Donate</a>
+        <a class="btn btn--gold btn--arrow" href="../donate/">Donate</a>
       </div>
     </div>
   </div>
@@ -99,7 +105,7 @@
       <span class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></span>
       <div>
         <p>LeaderFlow’s Foundational &amp; National Sponsors will help to be a part of building this organization and providing this program on a national level primarily for professionals of color within the AEC industry.</p>
-        <p class="callout__sub"><a href="../connect-with-us/"><strong>Contact us</strong></a><strong> for Foundational, National, Platinum or Gold Sponsorship opportunities.</strong></p>
+        <p class="callout__sub"><a href="../connect-with-us/"><strong>Contact us</strong></a><strong> for Foundational, National, Platinum, Gold, or Silver sponsorship opportunities.</strong></p>
       </div>
     </div>
     <div class="mt-lg">
@@ -153,10 +159,10 @@
 
 <section class="section">
   <div class="container">
-    <div class="cta-band bp reveal">
+    <div class="cta-band cta-band--photo bp reveal">
       <img src="../assets/img/photo/team-bw.webp" alt="" width="1600" height="800" loading="lazy" decoding="async" class="cta-band__bg">
       <h2>Donate to LeaderFlow</h2>
-      <a class="btn btn--gold btn--arrow" href="../donate/">Click to Donate</a>
+      <a class="btn btn--gold btn--arrow" href="../donate/">Donate</a>
     </div>
   </div>
 </section>
@@ -189,7 +195,7 @@
       <li><a href="../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

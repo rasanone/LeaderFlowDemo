@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../../about-us/">About Us</a></li>
+            <li><a href="../../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub is-current">
           <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -59,7 +65,7 @@
       <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="../../leaderflow-development-program/">Development Program</a></li><li aria-current="page">Application Form</li></ol></nav>
       <h1>Application Form</h1>
     </div>
-    <div class="page-hero__media"><picture><source media="(min-width: 760px)" srcset="../../assets/img/photo/hdr-workshop-table-1040.webp" width="1040" height="417"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1040" height="417"></picture></div>
+    <div class="page-hero__media"><img src="../../assets/img/photo/mission-4.webp" alt="" width="750" height="500" decoding="async" class="pos-right"></div>
   </div>
   <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
 </section>
@@ -123,7 +129,7 @@
     <h2 class="title-sm">Questions before you apply?</h2>
     <div class="btn-row btn-row--center mt-0">
       <a class="btn btn--outline" href="../participantfaqs/">Read the FAQ</a>
-      <a class="btn btn--outline" href="../../connect-with-us/">Connect with Us</a>
+      <a class="btn btn--outline" href="../../connect-with-us/">Connect with us</a>
     </div>
   </div>
 </section>
@@ -156,7 +162,7 @@
       <li><a href="../../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

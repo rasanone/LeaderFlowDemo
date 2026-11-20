@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../about-us/">About Us</a></li>
+            <li><a href="../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub">
           <a class="nav__link" href="../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -57,7 +63,6 @@
 <section class="form-hero bp">
   <div class="container form-hero__inner">
     <div class="form-hero__text">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li aria-current="page">Connect with Us</li></ol></nav>
       <h1>Connect with Us</h1>
       <ul class="contact-list">
         <li>
@@ -70,7 +75,7 @@
         </li>
       </ul>
     </div>
-    <div class="form-card form-card--hero">
+    <div class="form-card form-card--hero" id="contact-form">
       <h2 class="form-card__title">Start a discussion</h2>
       <!-- FORM (M9, front end only). data-endpoint stays empty until the Pages Function /api/contact exists;
            JS then posts there. Without JS the browser validates and posts to action="/api/contact".
@@ -116,7 +121,7 @@
       <li><a href="../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

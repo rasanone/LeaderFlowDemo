@@ -30,7 +30,7 @@ const browserPath = candidates.find((p) => existsSync(p));
 if (!browserPath) { console.error('No Chromium browser found; set BROWSER=...'); process.exit(2); }
 
 const PAGES = (process.env.PAGES || [
-  '/', '/about-us/', '/become-a-sponsor/', '/connect-with-us/',
+  '/', '/about-us/', '/impact/', '/become-a-sponsor/', '/connect-with-us/',
   '/flowcilitators/become-a-flowcilitator/', '/flowcilitators/meet-the-flowcilitators/',
   '/leaderflow-development-program/', '/leaderflow-development-program/application-process/',
   '/leaderflow-development-program/application-form/', '/leaderflow-development-program/application-form/apply/', '/leaderflow-development-program/leaderflow-graduates/',

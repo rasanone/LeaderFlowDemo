@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../../about-us/">About Us</a></li>
+            <li><a href="../../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub is-current">
           <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -59,7 +65,7 @@
       <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="../../leaderflow-development-program/">Development Program</a></li><li aria-current="page">Frequently Asked Questions</li></ol></nav>
       <h1>Frequently Asked Questions</h1>
     </div>
-    <div class="page-hero__media"><picture><source media="(min-width: 760px)" srcset="../../assets/img/photo/hdr-workshop-table-1040.webp" width="1040" height="417"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1040" height="417"></picture></div>
+    <div class="page-hero__media"><img src="../../assets/img/photo/mission-3.webp" alt="" width="750" height="500" decoding="async"></div>
   </div>
   <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
 </section>
@@ -70,10 +76,21 @@
       <ul><li><a href="#program-details">Program Details</a></li><li><a href="#eligibility-and-application">Eligibility and Application</a></li><li><a href="#benefits-and-outcomes">Benefits and Outcomes</a></li><li><a href="#cost-and-sponsorship">Cost and Sponsorship</a></li><li><a href="#networking-and-mentorship">Networking and Mentorship</a></li><li><a href="#program-experience">Program Experience</a></li><li><a href="#support-and-resources">Support and Resources</a></li><li><a href="#post-program-opportunities">Post-Program Opportunities</a></li></ul>
     </nav>
     <div>
+      <!-- Search: shown by site.js (without JS every question is simply listed). Matches on keywords and close
+           variants; if nothing matches it offers to send the question through the contact form. -->
+      <div class="faq-search" data-faq-search hidden>
+        <label class="faq-search__label" for="faq-q">Have a question? Search the FAQs</label>
+        <div class="faq-search__box">
+          <svg class="faq-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="faq-q" type="search" placeholder="e.g. How much does it cost?" autocomplete="off" maxlength="200" aria-describedby="faq-status">
+        </div>
+        <p class="faq-search__status" id="faq-status" role="status" aria-live="polite"></p>
+        <p class="faq-search__empty" hidden>No questions matched. <a href="../../connect-with-us/#contact-form" data-faq-ask>Ask us your question</a></p>
+      </div>
       <div class="faq-group reveal" id="program-details">
         <h2>Program Details</h2>
         <div class="accordion">
-          <details><summary>What is the program’s structure and duration?</summary><div class="accordion__body"><p>The LeaderFlow Development program is a 7-month curriculum focusing on personal growth, increased self-awareness and awareness of others, strengthened community, and improved skills in management and leadership at <strong>no cost to participants</strong>.</p></div></details>
+          <details><summary>What is the program’s structure and duration?</summary><div class="accordion__body"><p>The LeaderFlow Development Program is a 7-month curriculum focusing on personal growth, increased self-awareness and awareness of others, strengthened community, and improved skills in management and leadership at <strong>no cost to participants</strong>.</p></div></details>
           <details><summary>How much time will I need to commit?</summary><div class="accordion__body"><p>Participants are expected to commit to the 7-month program, which includes 7 monthly sessions. Each session is held on a Friday at a designated location from 9:00 AM to 5:00 PM. Participants will also attend a Kick-Off Orientation event (typically held the Thursday before the first program session from 6:00 PM to 8:00 PM) and a program wrap session.</p></div></details>
           <details><summary>Where will the program take place (in-person or online)?</summary><div class="accordion__body"><p>Each <strong>mandatory</strong> session will take place in-person.</p></div></details>
           <details><summary>How many people are accepted into the program per cohort?</summary><div class="accordion__body"><p>Each cohort consists of 12–15 participants.</p></div></details>
@@ -83,9 +100,9 @@
         <h2>Eligibility and Application</h2>
         <div class="accordion">
           <details><summary>Who is eligible to participate?</summary><div class="accordion__body"><p>Mid-career professionals with a minimum of 5 years of experience and a demonstrated interest and commitment to advancing leadership and innovation within the AEC industry, a focus on personal and professional growth, and availability for in-person attendance at all sessions.</p></div></details>
-          <details><summary>How do I apply, and what is the selection process?</summary><div class="accordion__body"><p>Prospective participants can apply directly via our website (<a href="../../">www.leaderflow.org</a>) by completing the application form.</p>
-<ul><li class="apps-closed">The application period for the 2026 LeaderFlow Development Program is now closed. To hear when applications reopen, <a href="https://eepurl.com/ivZ0H6">get notified</a>.</li><!-- TODO(O1): dates --><li class="apps-open">The application period for our <span class="tbc">[YEAR TBC]</span> Cohorts in New York, Chicago, Seattle, Los Angeles and Houston is open beginning on <span class="tbc">[OPENING DATE TBC]</span>. Applications will close <span class="tbc">[CLOSING DATE AND TIME TBC]</span></li><li>Apply Here: <a href="../../leaderflow-development-program/application-form/">https://leaderflow.org/leaderflow-development-program/application-form/</a></li></ul>
-<p>Please subscribe to our mailing list to stay informed. To subscribe, visit <a href="../../connect-with-us/">https://leaderflow.org/connect-with-us/</a>, scroll to the bottom, and click the subscribe button to fill in your contact information.</p></div></details>
+          <details><summary>How do I apply, and what is the selection process?</summary><div class="accordion__body"><p>Prospective participants apply by completing the <a href="../application-form/">application form</a> on our website.</p>
+<ul><li class="apps-closed">The application period for the 2026 LeaderFlow Development Program is now closed. To hear when applications reopen, <a href="https://eepurl.com/ivZ0H6">get notified</a>.</li><!-- TODO(O1): dates --><li class="apps-open">The application period for our <span class="tbc">[YEAR TBC]</span> cohorts in New York, Chicago, Seattle, Los Angeles and Houston is open beginning on <span class="tbc">[OPENING DATE TBC]</span>. Applications will close <span class="tbc">[CLOSING DATE AND TIME TBC]</span>.</li><li><a href="../application-form/">Apply here</a>.</li></ul>
+<p>Please <a href="https://eepurl.com/ivZ0H6">subscribe to our mailing list</a> to stay informed.</p></div></details>
           <details><summary>Are there prerequisites or prior experience required?</summary><div class="accordion__body"><p>Yes, applicants need at least 5 years of professional experience and a demonstrated commitment to fostering an inclusive and innovative industry.</p></div></details>
         </div>
       </div>
@@ -127,7 +144,7 @@
         <h2>Post-Program Opportunities</h2>
         <div class="accordion">
           <details><summary>What support is available after the program ends?</summary><div class="accordion__body"><p>Graduates who successfully complete the program will be invited to join the FloWork Alumni Network, which offers opportunities to reconnect with past cohort members, expand their professional network, mentor future leaders, and engage in ongoing learning and meaningful discussions about leadership and innovation in the AEC industry. Alumni can also contribute through advocacy, volunteering, or supporting future programs.</p></div></details>
-          <details><summary>How can I leverage the program experience in my current role?</summary><div class="accordion__body"><p>You can apply the leadership, communication, and trust-building skills gained in the program to enhance team collaboration, lead projects more effectively, and strengthen relationships with colleagues and clients. Additionally, the insights into work-life integration and personal strengths can help align your current role with your long-term career vis</p></div></details>
+          <details><summary>How can I leverage the program experience in my current role?</summary><div class="accordion__body"><p>You can apply the leadership, communication, and trust-building skills gained in the program to enhance team collaboration, lead projects more effectively, and strengthen relationships with colleagues and clients. Additionally, the insights into work-life integration and personal strengths can help align your current role with your long-term career vision.</p></div></details>
         </div>
       </div>
     </div>
@@ -162,7 +179,7 @@
       <li><a href="../../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

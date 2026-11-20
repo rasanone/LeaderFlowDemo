@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../../about-us/">About Us</a></li>
+            <li><a href="../../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub is-current">
           <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -59,7 +65,7 @@
       <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="../../leaderflow-development-program/">Development Program</a></li><li aria-current="page">LeaderFlow Graduates</li></ol></nav>
       <h1>LeaderFlow Graduates</h1>
     </div>
-    <div class="page-hero__media"><picture><source media="(min-width: 760px)" srcset="../../assets/img/photo/hdr-workshop-table-1040.webp" width="1040" height="417"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1040" height="417"></picture></div>
+    <div class="page-hero__media page-hero__media--trio"><img src="../../assets/img/grads/2025-los-angeles-chieh-ting-chuang-448.webp" alt="" width="448" height="560" decoding="async"><img src="../../assets/img/grads/2025-los-angeles-shakari-mcgill-438.webp" alt="" width="438" height="548" decoding="async"><img src="../../assets/img/grads/2025-seattle-mel-isidor-442.webp" alt="" width="442" height="552" decoding="async"></div>
   </div>
   <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
 </section>
@@ -67,7 +73,7 @@
 <section class="section">
   <div class="container">
     <div class="section-head reveal">
-      <h2>Meet our Emerging Leaders!</h2>
+      <h2>Meet Our Emerging Leaders!</h2>
       <p class="lede">Our cohorts are balanced between Architecture, Engineering, and Construction to encourage networking and relationship building across all three professions. We congratulate the graduates on completing the program and wish them continued success in their careers!</p>
     </div>
     <div class="cohort-tabs" role="tablist" aria-label="Cohort year" data-tabs><button role="tab" id="tab-0" aria-controls="cohort-0" aria-selected="true">2025 Cohort</button><button role="tab" id="tab-1" aria-controls="cohort-1" aria-selected="false" tabindex="-1">2024 Cohort</button><button role="tab" id="tab-2" aria-controls="cohort-2" aria-selected="false" tabindex="-1">2023 Cohort</button><button role="tab" id="tab-3" aria-controls="cohort-3" aria-selected="false" tabindex="-1">2022 Cohort</button><button role="tab" id="tab-4" aria-controls="cohort-4" aria-selected="false" tabindex="-1">2021 Cohort</button></div>
@@ -91,12 +97,12 @@
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-cynthia-nei-240.webp" srcset="../../assets/img/grads/2025-los-angeles-cynthia-nei-240.webp 240w, ../../assets/img/grads/2025-los-angeles-cynthia-nei-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Cynthia Nei" width="240" height="300" decoding="async"></div>
                 <h3>Cynthia Nei</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 20 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 20 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-daniela-rincon-240.webp" srcset="../../assets/img/grads/2025-los-angeles-daniela-rincon-240.webp 240w" sizes="(max-width: 700px) 45vw, 240px" alt="Daniela Rincon" width="240" height="300" decoding="async"></div>
                 <h3>Daniela Rincon</h3>
-                <p><strong>Industry:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
+                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-dolores-robles-martinez-240.webp" srcset="../../assets/img/grads/2025-los-angeles-dolores-robles-martinez-240.webp 240w, ../../assets/img/grads/2025-los-angeles-dolores-robles-martinez-360.webp 360w, ../../assets/img/grads/2025-los-angeles-dolores-robles-martinez-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Dolores Robles Martinez" width="240" height="300" decoding="async"></div>
@@ -111,57 +117,57 @@
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-george-jang-240.webp" srcset="../../assets/img/grads/2025-los-angeles-george-jang-240.webp 240w, ../../assets/img/grads/2025-los-angeles-george-jang-360.webp 360w, ../../assets/img/grads/2025-los-angeles-george-jang-452.webp 452w" sizes="(max-width: 700px) 45vw, 240px" alt="George Jang" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>George Jang</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-jocelyn-la-chance-240.webp" srcset="../../assets/img/grads/2025-los-angeles-jocelyn-la-chance-240.webp 240w, ../../assets/img/grads/2025-los-angeles-jocelyn-la-chance-360.webp 360w, ../../assets/img/grads/2025-los-angeles-jocelyn-la-chance-448.webp 448w" sizes="(max-width: 700px) 45vw, 240px" alt="Jocelyn La Chance" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Jocelyn La Chance</h3>
-                <p><strong>Industry:</strong> Mechanical Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
+                <p><strong>Field:</strong> Mechanical Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-jorge-gallegos-240.webp" srcset="../../assets/img/grads/2025-los-angeles-jorge-gallegos-240.webp 240w, ../../assets/img/grads/2025-los-angeles-jorge-gallegos-360.webp 360w, ../../assets/img/grads/2025-los-angeles-jorge-gallegos-478.webp 478w" sizes="(max-width: 700px) 45vw, 240px" alt="Jorge Gallegos" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Jorge Gallegos</h3>
-                <p><strong>Industry:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 18 years</p>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 18 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-krystie-ortencio-240.webp" srcset="../../assets/img/grads/2025-los-angeles-krystie-ortencio-240.webp 240w, ../../assets/img/grads/2025-los-angeles-krystie-ortencio-360.webp 360w, ../../assets/img/grads/2025-los-angeles-krystie-ortencio-410.webp 410w" sizes="(max-width: 700px) 45vw, 240px" alt="Krystie Ortencio" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Krystie Ortencio</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 13 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 13 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-lily-hao-240.webp" srcset="../../assets/img/grads/2025-los-angeles-lily-hao-240.webp 240w, ../../assets/img/grads/2025-los-angeles-lily-hao-360.webp 360w, ../../assets/img/grads/2025-los-angeles-lily-hao-448.webp 448w" sizes="(max-width: 700px) 45vw, 240px" alt="Lily Hao" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Lily Hao</h3>
-                <p><strong>Industry:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 9.5 years</p>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 9.5 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-neda-rad-240.webp" srcset="../../assets/img/grads/2025-los-angeles-neda-rad-240.webp 240w, ../../assets/img/grads/2025-los-angeles-neda-rad-360.webp 360w, ../../assets/img/grads/2025-los-angeles-neda-rad-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Neda Rad" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Neda Rad</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-nikhita-sapuram-220.webp" srcset="../../assets/img/grads/2025-los-angeles-nikhita-sapuram-220.webp 220w" sizes="(max-width: 700px) 45vw, 240px" alt="Nikhita Sapuram" width="220" height="275" loading="lazy" decoding="async"></div>
                 <h3>Nikhita Sapuram</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-sabrina-yuen-240.webp" srcset="../../assets/img/grads/2025-los-angeles-sabrina-yuen-240.webp 240w, ../../assets/img/grads/2025-los-angeles-sabrina-yuen-360.webp 360w, ../../assets/img/grads/2025-los-angeles-sabrina-yuen-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Sabrina Yuen" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Sabrina Yuen</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 6 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 6 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-shakari-mcgill-240.webp" srcset="../../assets/img/grads/2025-los-angeles-shakari-mcgill-240.webp 240w, ../../assets/img/grads/2025-los-angeles-shakari-mcgill-360.webp 360w, ../../assets/img/grads/2025-los-angeles-shakari-mcgill-438.webp 438w" sizes="(max-width: 700px) 45vw, 240px" alt="Shakari McGill" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Shakari McGill</h3>
-                <p><strong>Industry:</strong> Sustainability</p><p><strong>Experience as of Enrollment:</strong> 6 years</p>
+                <p><strong>Field:</strong> Sustainability</p><p><strong>Experience as of Enrollment:</strong> 6 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-sylvia-richardson-240.webp" srcset="../../assets/img/grads/2025-los-angeles-sylvia-richardson-240.webp 240w, ../../assets/img/grads/2025-los-angeles-sylvia-richardson-360.webp 360w, ../../assets/img/grads/2025-los-angeles-sylvia-richardson-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Sylvia Richardson" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Sylvia Richardson</h3>
-                <p><strong>Industry:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-los-angeles-yu-hsuan-yosh-lin-240.webp" srcset="../../assets/img/grads/2025-los-angeles-yu-hsuan-yosh-lin-240.webp 240w, ../../assets/img/grads/2025-los-angeles-yu-hsuan-yosh-lin-360.webp 360w, ../../assets/img/grads/2025-los-angeles-yu-hsuan-yosh-lin-402.webp 402w" sizes="(max-width: 700px) 45vw, 240px" alt="Yu-Hsuan Yosh Lin" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Yu-Hsuan Yosh Lin</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
             </ul>
             <div class="quotes"><figure class="quote"><blockquote>LeaderFlow has empowered me to lead with empathy, connection, and positivity while staying grounded in my core values of integrity, authenticity, and compassion. I’ve learned to lean into my strengths and approach crucial conversations with confidence and emotional intelligence — emerging not only as a stronger leader, but also as a more committed teammate, a supportive sister, a mindful friend, and a refined version of me.”</blockquote><figcaption><strong>Jocelyn La Chance</strong>2025 Los Angeles Cohort</figcaption></figure><figure class="quote"><blockquote>The LeaderFlow program has given me a new outlook on what I bring to the table professionally and personally. Each uniquely curated session has stretched my understanding of what it means to show up for my career, my colleagues, and my industry. I am walking away from the whole experience with newfound tools and stronger relationships that I believe will launch me into the leader I have aspired to be for many years.”</blockquote><figcaption><strong>Christian Tellez</strong>2025 Los Angeles Cohort</figcaption></figure><figure class="quote"><blockquote>LeaderFlow has given me the space and tools to learn more as to what constitutes a great leader in the AEC industry. It has allowed me to find the roadmap to develop my leadership style and showed me specific examples and methods to practice being a more present, self aware, and effective leader.”</blockquote><figcaption><strong>Lily Hao</strong>2025 Los Angeles Cohort</figcaption></figure></div>
@@ -295,14 +301,14 @@
                 <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2025-houston-shannon-oliveira-240.webp" srcset="../../assets/img/grads/2025-houston-shannon-oliveira-240.webp 240w, ../../assets/img/grads/2025-houston-shannon-oliveira-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Shannon Oliveira" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Shannon Oliveira</h3>
-                <p><strong>Field:</strong> Interior Design</p><p><strong>Experience as of Enrollment:</strong> 14 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-houston-sam-marvdashti-240.webp" srcset="../../assets/img/grads/2025-houston-sam-marvdashti-240.webp 240w, ../../assets/img/grads/2025-houston-sam-marvdashti-360.webp 360w, ../../assets/img/grads/2025-houston-sam-marvdashti-414.webp 414w" sizes="(max-width: 700px) 45vw, 240px" alt="Sam Marvdashti" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Sam Marvdashti</h3>
                 <p><strong>Field:</strong> Electrical Engineering</p><p><strong>Experience as of Enrollment:</strong> 19 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2025-houston-shannon-oliveira-240.webp" srcset="../../assets/img/grads/2025-houston-shannon-oliveira-240.webp 240w, ../../assets/img/grads/2025-houston-shannon-oliveira-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Shannon Oliveira" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Shannon Oliveira</h3>
+                <p><strong>Field:</strong> Interior Design</p><p><strong>Experience as of Enrollment:</strong> 14 years</p>
               </li>
             </ul>
             
@@ -388,7 +394,6 @@
                 <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 22 years</p>
               </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>This journey has been such a rewarding experience, filled with personal growth, meaningful connections, and the chance to learn from incredible leaders. I’m deeply grateful to John Gavan, SE, Janiece L. Williams, NOMA, and all of our facilitators for their commitment to empowering professionals of color and fostering community within the industry. I’m looking forward to taking these lessons forward and continuing to grow both personally and professionally alongside such a supportive network.</blockquote><figcaption><strong>Shirin Masoudi</strong>2024 Seattle Cohort</figcaption></figure></div>
           </div>
         </details>
         <details class="city">
@@ -441,14 +446,14 @@
                 <p><strong>Field:</strong> Landscape Architecture</p><p><strong>Experience as of Enrollment:</strong> 17 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2025-chicago-rick-gutierrez-240.webp" srcset="../../assets/img/grads/2025-chicago-rick-gutierrez-240.webp 240w, ../../assets/img/grads/2025-chicago-rick-gutierrez-360.webp 360w, ../../assets/img/grads/2025-chicago-rick-gutierrez-446.webp 446w" sizes="(max-width: 700px) 45vw, 240px" alt="Rick Gutierrez" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Rick Gutierrez</h3>
-                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 9 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-chicago-ricardo-anguiano-240.webp" srcset="../../assets/img/grads/2025-chicago-ricardo-anguiano-240.webp 240w, ../../assets/img/grads/2025-chicago-ricardo-anguiano-360.webp 360w, ../../assets/img/grads/2025-chicago-ricardo-anguiano-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Ricardo Anguiano" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Ricardo Anguiano</h3>
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2025-chicago-rick-gutierrez-240.webp" srcset="../../assets/img/grads/2025-chicago-rick-gutierrez-240.webp 240w, ../../assets/img/grads/2025-chicago-rick-gutierrez-360.webp 360w, ../../assets/img/grads/2025-chicago-rick-gutierrez-446.webp 446w" sizes="(max-width: 700px) 45vw, 240px" alt="Rick Gutierrez" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Rick Gutierrez</h3>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 9 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2025-chicago-tayo-odunlami-240.webp" srcset="../../assets/img/grads/2025-chicago-tayo-odunlami-240.webp 240w, ../../assets/img/grads/2025-chicago-tayo-odunlami-360.webp 360w, ../../assets/img/grads/2025-chicago-tayo-odunlami-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Tayo Odunlami" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -461,7 +466,6 @@
                 <p><strong>Field:</strong> Environmental Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>This journey has been such a rewarding experience, filled with personal growth, meaningful connections, and the chance to learn from incredible leaders. I’m deeply grateful to John Gavan, SE, Janiece L. Williams, NOMA, and all of our facilitators for their commitment to empowering professionals of color and fostering community within the industry. I’m looking forward to taking these lessons forward and continuing to grow both personally and professionally alongside such a supportive network.</blockquote><figcaption><strong>Shirin Masoudi</strong>2024 Seattle Cohort</figcaption></figure></div>
           </div>
         </details>
       </div>
@@ -474,24 +478,19 @@
           <div class="accordion__body">
             <ul class="people people--sm">
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-240.webp" srcset="../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-240.webp 240w, ../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-347.webp 347w" sizes="(max-width: 700px) 45vw, 240px" alt="Natalie Aguilar-Carranza" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Natalie Aguilar-Carranza</h3>
-                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-mengyi-xu-240.webp" srcset="../../assets/img/grads/2024-los-angeles-mengyi-xu-240.webp 240w, ../../assets/img/grads/2024-los-angeles-mengyi-xu-340.webp 340w" sizes="(max-width: 700px) 45vw, 240px" alt="Mengyi Xu" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Mengyi Xu</h3>
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-alison-kung-240.webp" srcset="../../assets/img/grads/2024-los-angeles-alison-kung-240.webp 240w, ../../assets/img/grads/2024-los-angeles-alison-kung-346.webp 346w" sizes="(max-width: 700px) 45vw, 240px" alt="Alison Kung" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Alison Kung</h3>
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-alison-kung-240.webp" srcset="../../assets/img/grads/2024-los-angeles-alison-kung-240.webp 240w, ../../assets/img/grads/2024-los-angeles-alison-kung-346.webp 346w" sizes="(max-width: 700px) 45vw, 240px" alt="Alison Kung" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Alison Kung</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-courtney-wladyka-240.webp" srcset="../../assets/img/grads/2024-los-angeles-courtney-wladyka-240.webp 240w, ../../assets/img/grads/2024-los-angeles-courtney-wladyka-360.webp 360w, ../../assets/img/grads/2024-los-angeles-courtney-wladyka-448.webp 448w" sizes="(max-width: 700px) 45vw, 240px" alt="Courtney Wladyka" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Courtney Wladyka</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-elizabeth-vento-120.webp" srcset="../../assets/img/grads/2024-los-angeles-elizabeth-vento-120.webp 120w" sizes="(max-width: 700px) 45vw, 240px" alt="Elizabeth Vento" width="120" height="150" loading="lazy" decoding="async"></div>
                 <h3>Elizabeth Vento</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-janisha-johnson-240.webp" srcset="../../assets/img/grads/2024-los-angeles-janisha-johnson-240.webp 240w, ../../assets/img/grads/2024-los-angeles-janisha-johnson-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Janisha Johnson" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -504,44 +503,49 @@
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-sherry-dadci-240.webp" srcset="../../assets/img/grads/2024-los-angeles-sherry-dadci-240.webp 240w, ../../assets/img/grads/2024-los-angeles-sherry-dadci-360.webp 360w, ../../assets/img/grads/2024-los-angeles-sherry-dadci-425.webp 425w" sizes="(max-width: 700px) 45vw, 240px" alt="Sherry Dadci" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Sherry Dadci</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-mengyi-xu-240.webp" srcset="../../assets/img/grads/2024-los-angeles-mengyi-xu-240.webp 240w, ../../assets/img/grads/2024-los-angeles-mengyi-xu-340.webp 340w" sizes="(max-width: 700px) 45vw, 240px" alt="Mengyi Xu" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Mengyi Xu</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-mengying-bai-240.webp" srcset="../../assets/img/grads/2024-los-angeles-mengying-bai-240.webp 240w, ../../assets/img/grads/2024-los-angeles-mengying-bai-360.webp 360w, ../../assets/img/grads/2024-los-angeles-mengying-bai-427.webp 427w" sizes="(max-width: 700px) 45vw, 240px" alt="Mengying Bai" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Mengying Bai</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8.5 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 8.5 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-240.webp" srcset="../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-240.webp 240w, ../../assets/img/grads/2024-los-angeles-natalie-aguilar-carranza-347.webp 347w" sizes="(max-width: 700px) 45vw, 240px" alt="Natalie Aguilar-Carranza" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Natalie Aguilar-Carranza</h3>
+                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-nicholas-awori-240.webp" srcset="../../assets/img/grads/2024-los-angeles-nicholas-awori-240.webp 240w, ../../assets/img/grads/2024-los-angeles-nicholas-awori-360.webp 360w, ../../assets/img/grads/2024-los-angeles-nicholas-awori-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Nicholas Awori" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Nicholas Awori</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 28 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-summer-su-240.webp" srcset="../../assets/img/grads/2024-los-angeles-summer-su-240.webp 240w, ../../assets/img/grads/2024-los-angeles-summer-su-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Summer Su" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Summer Su</h3>
-                <p><strong>Industry:</strong> Civil Engineering</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-wei-tse-yuan-240.webp" srcset="../../assets/img/grads/2024-los-angeles-wei-tse-yuan-240.webp 240w, ../../assets/img/grads/2024-los-angeles-wei-tse-yuan-360.webp 360w, ../../assets/img/grads/2024-los-angeles-wei-tse-yuan-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Wei-Tse Yuan" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Wei-Tse Yuan</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-whitney-byrd-240.webp" srcset="../../assets/img/grads/2024-los-angeles-whitney-byrd-240.webp 240w, ../../assets/img/grads/2024-los-angeles-whitney-byrd-360.webp 360w, ../../assets/img/grads/2024-los-angeles-whitney-byrd-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Whitney Byrd" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Whitney Byrd</h3>
-                <p><strong>Industry:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 18 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-courtney-wladyka-240.webp" srcset="../../assets/img/grads/2024-los-angeles-courtney-wladyka-240.webp 240w, ../../assets/img/grads/2024-los-angeles-courtney-wladyka-360.webp 360w, ../../assets/img/grads/2024-los-angeles-courtney-wladyka-448.webp 448w" sizes="(max-width: 700px) 45vw, 240px" alt="Courtney Wladyka" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Courtney Wladyka</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 28 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-rita-bagala-240.webp" srcset="../../assets/img/grads/2024-los-angeles-rita-bagala-240.webp 240w, ../../assets/img/grads/2024-los-angeles-rita-bagala-360.webp 360w, ../../assets/img/grads/2024-los-angeles-rita-bagala-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Rita Bagala" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Rita Bagala</h3>
-                <p><strong>Industry:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-sherry-dadci-240.webp" srcset="../../assets/img/grads/2024-los-angeles-sherry-dadci-240.webp 240w, ../../assets/img/grads/2024-los-angeles-sherry-dadci-360.webp 360w, ../../assets/img/grads/2024-los-angeles-sherry-dadci-425.webp 425w" sizes="(max-width: 700px) 45vw, 240px" alt="Sherry Dadci" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Sherry Dadci</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-summer-su-240.webp" srcset="../../assets/img/grads/2024-los-angeles-summer-su-240.webp 240w, ../../assets/img/grads/2024-los-angeles-summer-su-360.webp 360w" sizes="(max-width: 700px) 45vw, 240px" alt="Summer Su" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Summer Su</h3>
+                <p><strong>Field:</strong> Civil Engineering</p><p><strong>Experience as of Enrollment:</strong> 15 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-wei-tse-yuan-240.webp" srcset="../../assets/img/grads/2024-los-angeles-wei-tse-yuan-240.webp 240w, ../../assets/img/grads/2024-los-angeles-wei-tse-yuan-360.webp 360w, ../../assets/img/grads/2024-los-angeles-wei-tse-yuan-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Wei-Tse Yuan" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Wei-Tse Yuan</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-los-angeles-whitney-byrd-240.webp" srcset="../../assets/img/grads/2024-los-angeles-whitney-byrd-240.webp 240w, ../../assets/img/grads/2024-los-angeles-whitney-byrd-360.webp 360w, ../../assets/img/grads/2024-los-angeles-whitney-byrd-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Whitney Byrd" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Whitney Byrd</h3>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 18 years</p>
               </li>
             </ul>
             
@@ -551,6 +555,11 @@
           <summary>Seattle</summary>
           <div class="accordion__body">
             <ul class="people people--sm">
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-seattle-amy-kuo-240.webp" srcset="../../assets/img/grads/2024-seattle-amy-kuo-240.webp 240w, ../../assets/img/grads/2024-seattle-amy-kuo-360.webp 360w, ../../assets/img/grads/2024-seattle-amy-kuo-463.webp 463w" sizes="(max-width: 700px) 45vw, 240px" alt="Amy Kuo" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Amy Kuo</h3>
+                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
+              </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-seattle-chris-parker-240.webp" srcset="../../assets/img/grads/2024-seattle-chris-parker-240.webp 240w, ../../assets/img/grads/2024-seattle-chris-parker-360.webp 360w, ../../assets/img/grads/2024-seattle-chris-parker-448.webp 448w" sizes="(max-width: 700px) 45vw, 240px" alt="Chris Parker" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Chris Parker</h3>
@@ -595,11 +604,6 @@
                 <div class="person__photo"><img src="../../assets/img/grads/2024-seattle-kunal-vaswani-240.webp" srcset="../../assets/img/grads/2024-seattle-kunal-vaswani-240.webp 240w, ../../assets/img/grads/2024-seattle-kunal-vaswani-360.webp 360w, ../../assets/img/grads/2024-seattle-kunal-vaswani-441.webp 441w" sizes="(max-width: 700px) 45vw, 240px" alt="Kunal Vaswani" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Kunal Vaswani</h3>
                 <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
-              </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-seattle-amy-kuo-240.webp" srcset="../../assets/img/grads/2024-seattle-amy-kuo-240.webp 240w, ../../assets/img/grads/2024-seattle-amy-kuo-360.webp 360w, ../../assets/img/grads/2024-seattle-amy-kuo-463.webp 463w" sizes="(max-width: 700px) 45vw, 240px" alt="Amy Kuo" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Amy Kuo</h3>
-                <p><strong>Field:</strong> Structural Engineering</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-seattle-marcus-freeman-240.webp" srcset="../../assets/img/grads/2024-seattle-marcus-freeman-240.webp 240w, ../../assets/img/grads/2024-seattle-marcus-freeman-360.webp 360w, ../../assets/img/grads/2024-seattle-marcus-freeman-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Marcus Freeman" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -655,14 +659,14 @@
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2024-houston-meaghan-williams-240.webp" srcset="../../assets/img/grads/2024-houston-meaghan-williams-240.webp 240w, ../../assets/img/grads/2024-houston-meaghan-williams-360.webp 360w, ../../assets/img/grads/2024-houston-meaghan-williams-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Meaghan Williams" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Meaghan Williams</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 3 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-houston-jayla-huseyn-240.webp" srcset="../../assets/img/grads/2024-houston-jayla-huseyn-240.webp 240w, ../../assets/img/grads/2024-houston-jayla-huseyn-360.webp 360w, ../../assets/img/grads/2024-houston-jayla-huseyn-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Jayla Huseyn" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Jayla Huseyn</h3>
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2024-houston-meaghan-williams-240.webp" srcset="../../assets/img/grads/2024-houston-meaghan-williams-240.webp 240w, ../../assets/img/grads/2024-houston-meaghan-williams-360.webp 360w, ../../assets/img/grads/2024-houston-meaghan-williams-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Meaghan Williams" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Meaghan Williams</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 3 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2024-houston-paris-woods-240.webp" srcset="../../assets/img/grads/2024-houston-paris-woods-240.webp 240w, ../../assets/img/grads/2024-houston-paris-woods-360.webp 360w, ../../assets/img/grads/2024-houston-paris-woods-480.webp 480w" sizes="(max-width: 700px) 45vw, 240px" alt="Paris Woods" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -695,7 +699,7 @@
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 17 years</p>
               </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>LeaderFlow has been an amazing and rewarding opportunity for growth both professionally and personally. I found a group of supportive and talented AEC professionals with whom I bonded at a profound level. Although each of us brought our unique stories and experiences to the table, this program enables us to collectively develop into the leaders that our industry is need of.</blockquote><figcaption><strong>Priscilla Nguyen</strong>2024 Houston Cohort</figcaption></figure></div>
+            <div class="quotes"><figure class="quote"><blockquote>LeaderFlow has been an amazing and rewarding opportunity for growth both professionally and personally. I found a group of supportive and talented AEC professionals with whom I bonded at a profound level. Although each of us brought our unique stories and experiences to the table, this program enables us to collectively develop into the leaders that our industry in need of.</blockquote><figcaption><strong>Priscilla Nguyen</strong>2024 Houston Cohort</figcaption></figure></div>
           </div>
         </details>
       </div>
@@ -718,11 +722,6 @@
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-stephanie-carter-240.webp" srcset="../../assets/img/grads/2023-los-angeles-stephanie-carter-240.webp 240w, ../../assets/img/grads/2023-los-angeles-stephanie-carter-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Stephanie Carter" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Stephanie Carter</h3>
-                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 11.5 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-chun-liu-240.webp" srcset="../../assets/img/grads/2023-los-angeles-chun-liu-240.webp 240w, ../../assets/img/grads/2023-los-angeles-chun-liu-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Chun Liu" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Chun Liu</h3>
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 14 years</p>
@@ -743,9 +742,19 @@
                 <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-imani-mcmillan-240.webp" srcset="../../assets/img/grads/2023-los-angeles-imani-mcmillan-240.webp 240w, ../../assets/img/grads/2023-los-angeles-imani-mcmillan-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Imani McMillan" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Imani McMillan</h3>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
+              </li>
+              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-jason-morris-240.webp" srcset="../../assets/img/grads/2023-los-angeles-jason-morris-240.webp 240w, ../../assets/img/grads/2023-los-angeles-jason-morris-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jason Morris" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Jason Morris</h3>
                 <p><strong>Field:</strong> Architecture and Engineering Consulting</p><p><strong>Experience as of Enrollment:</strong> 16 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-jennifer-cooper-240.webp" srcset="../../assets/img/grads/2023-los-angeles-jennifer-cooper-240.webp 240w, ../../assets/img/grads/2023-los-angeles-jennifer-cooper-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jennifer Cooper" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Jennifer Cooper</h3>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-karen-chan-240.webp" srcset="../../assets/img/grads/2023-los-angeles-karen-chan-240.webp 240w, ../../assets/img/grads/2023-los-angeles-karen-chan-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Karen Chan" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -753,22 +762,17 @@
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 20 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-imani-mcmillan-240.webp" srcset="../../assets/img/grads/2023-los-angeles-imani-mcmillan-240.webp 240w, ../../assets/img/grads/2023-los-angeles-imani-mcmillan-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Imani McMillan" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Imani McMillan</h3>
-                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
+                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-stephanie-carter-240.webp" srcset="../../assets/img/grads/2023-los-angeles-stephanie-carter-240.webp 240w, ../../assets/img/grads/2023-los-angeles-stephanie-carter-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Stephanie Carter" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Stephanie Carter</h3>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 11.5 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-wynord-thomas-jr-240.webp" srcset="../../assets/img/grads/2023-los-angeles-wynord-thomas-jr-240.webp 240w, ../../assets/img/grads/2023-los-angeles-wynord-thomas-jr-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Wynord Thomas Jr" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Wynord Thomas Jr</h3>
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
               </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-los-angeles-jennifer-cooper-240.webp" srcset="../../assets/img/grads/2023-los-angeles-jennifer-cooper-240.webp 240w, ../../assets/img/grads/2023-los-angeles-jennifer-cooper-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jennifer Cooper" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Jennifer Cooper</h3>
-                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
-              </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>…Starting with our introductions and stories was a great way to set the tone for the rest of the program. It’s great to have honesty and vulnerability. Also I really like the explanation at the beginning of what the program is about. A big plus for making it interactive and have breakout groups, it helps to form relationships and hear personally from others. The strength finders was great too, I actually prefer it over Eneagram.</blockquote><figcaption><strong>Carlos Hurtado</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>I felt really connected to the others…I think it was so important to get to know everyone personally [and] not just speak about our professional accomplishments. The Gallup assessment was amazing. Being able to learn more about myself and my strengths, but also not be put down for being [who I am] but being lifted for [being] so methodical, was great. I am really appreciative [of] this program…!”</blockquote><figcaption><strong>Imani McMillan</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>The visual mapping concerning our core values was one of the most impressive sessions I’ve seen… It teaches you how your core values line up with you becoming a leader, and you may have to shift some things around to reach your goals. Sharing this exercise with my immediate family at home helped me realize where they are in this journey of life, as well as understand what’s important to them.”</blockquote><figcaption><strong>Andre Cooper</strong>2023 Houston Cohort</figcaption></figure><figure class="quote"><blockquote>LeaderFlow has been an amazing and rewarding opportunity for growth both professionally and personally. I found a group of supportive and talented AEC professionals with whom I bonded at a profound level. Although each of us brought our unique stories and experiences to the table, this program enables us to collectively develop into the leaders that our industry is need of.</blockquote><figcaption><strong>Gerard Palody</strong>2023 LA Cohort</figcaption></figure></div>
+            <div class="quotes"><figure class="quote"><blockquote>…Starting with our introductions and stories was a great way to set the tone for the rest of the program. It’s great to have honesty and vulnerability. Also I really like the explanation at the beginning of what the program is about. A big plus for making it interactive and have breakout groups, it helps to form relationships and hear personally from others. The strength finders was great too, I actually prefer it over Eneagram.</blockquote><figcaption><strong>Carlos Hurtado</strong>2023 Los Angeles Cohort</figcaption></figure><figure class="quote"><blockquote>I felt really connected to the others…I think it was so important to get to know everyone personally [and] not just speak about our professional accomplishments. The Gallup assessment was amazing. Being able to learn more about myself and my strengths, but also not be put down for being [who I am] but being lifted for [being] so methodical, was great. I am really appreciative [of] this program…!”</blockquote><figcaption><strong>Imani McMillan</strong>2023 Los Angeles Cohort</figcaption></figure><figure class="quote"><blockquote>LeaderFlow has been an amazing and rewarding opportunity for growth both professionally and personally. I found a group of supportive and talented AEC professionals with whom I bonded at a profound level. Although each of us brought our unique stories and experiences to the table, this program enables us to collectively develop into the leaders that our industry in need of.</blockquote><figcaption><strong>Gerard Palody</strong>2023 Los Angeles Cohort</figcaption></figure></div>
           </div>
         </details>
         <details class="city">
@@ -816,14 +820,14 @@
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-seattle-kenneth-nti-240.webp" srcset="../../assets/img/grads/2023-seattle-kenneth-nti-240.webp 240w, ../../assets/img/grads/2023-seattle-kenneth-nti-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Kenneth Nti" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Kenneth Nti</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-seattle-kelly-au-240.webp" srcset="../../assets/img/grads/2023-seattle-kelly-au-240.webp 240w, ../../assets/img/grads/2023-seattle-kelly-au-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Kelly Au" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Kelly Au</h3>
                 <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2023-seattle-kenneth-nti-240.webp" srcset="../../assets/img/grads/2023-seattle-kenneth-nti-240.webp 240w, ../../assets/img/grads/2023-seattle-kenneth-nti-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Kenneth Nti" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Kenneth Nti</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-seattle-lily-siu-240.webp" srcset="../../assets/img/grads/2023-seattle-lily-siu-240.webp 240w, ../../assets/img/grads/2023-seattle-lily-siu-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Lily Siu" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -841,7 +845,6 @@
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 9 years</p>
               </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>..Starting with our introductions and stories was a great way to set the tone for the rest of the program. It’s great to have honesty and vulnerability. Also I really like the explanation at the beginning of what the program is about. A big plus for making it interactive and have breakout groups, it helps to form relationships and hear personally from others. The strength finders was great too, I actually prefer it over Eneagram.</blockquote><figcaption><strong>Carlos Hurtado</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>I felt really connected to the others…I think it was so important to get to know everyone personally [and] not just speak about our professional accomplishments. The Gallup assessment was amazing. Being able to learn more about myself and my strengths, but also not be put down for being [who I am] but being lifted for [being] so methodical, was great. I am really appreciative [of] this program…!”</blockquote><figcaption><strong>Imani McMillan</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>The visual mapping concerning our core values was one of the most impressive sessions I’ve seen… It teaches you how your core values line up with you becoming a leader, and you may have to shift some things around to reach your goals. Sharing this exercise with my immediate family at home helped me realize where they are in this journey of life, as well as understand what’s important to them.”</blockquote><figcaption><strong>Andre Cooper</strong>2023 Houston Cohort</figcaption></figure></div>
           </div>
         </details>
         <details class="city">
@@ -864,9 +867,14 @@
                 <p><strong>Field:</strong> Architecture and Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-javier-e-guerrero-240.webp" srcset="../../assets/img/grads/2023-houston-javier-e-guerrero-240.webp 240w, ../../assets/img/grads/2023-houston-javier-e-guerrero-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Javier E. Guerrero" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Javier E. Guerrero</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
+                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-fallon-barrett-240.webp" srcset="../../assets/img/grads/2023-houston-fallon-barrett-240.webp 240w, ../../assets/img/grads/2023-houston-fallon-barrett-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Fallon Barrett" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Fallon Barrett</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 3 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-jarrad-lenoir-240.webp" srcset="../../assets/img/grads/2023-houston-jarrad-lenoir-240.webp 240w, ../../assets/img/grads/2023-houston-jarrad-lenoir-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jarrad Lenoir" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Jarrad Lenoir</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-houston-jasmine-gulati-240.webp" srcset="../../assets/img/grads/2023-houston-jasmine-gulati-240.webp 240w, ../../assets/img/grads/2023-houston-jasmine-gulati-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jasmine Gulati" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -874,9 +882,14 @@
                 <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-jarrad-lenoir-240.webp" srcset="../../assets/img/grads/2023-houston-jarrad-lenoir-240.webp 240w, ../../assets/img/grads/2023-houston-jarrad-lenoir-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jarrad Lenoir" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Jarrad Lenoir</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 11 years</p>
+                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-javier-e-guerrero-240.webp" srcset="../../assets/img/grads/2023-houston-javier-e-guerrero-240.webp 240w, ../../assets/img/grads/2023-houston-javier-e-guerrero-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Javier E. Guerrero" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Javier E. Guerrero</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 2 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-jay-young-240.webp" srcset="../../assets/img/grads/2023-houston-jay-young-240.webp 240w, ../../assets/img/grads/2023-houston-jay-young-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jay Young" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Jay Young</h3>
+                <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-houston-mariela-flores-240.webp" srcset="../../assets/img/grads/2023-houston-mariela-flores-240.webp 240w, ../../assets/img/grads/2023-houston-mariela-flores-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Mariela Flores" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -894,22 +907,12 @@
                 <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 6 years</p>
               </li>
               <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-jay-young-240.webp" srcset="../../assets/img/grads/2023-houston-jay-young-240.webp 240w, ../../assets/img/grads/2023-houston-jay-young-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jay Young" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Jay Young</h3>
-                <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
-              </li>
-              <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2023-houston-valentina-aristizabal-240.webp" srcset="../../assets/img/grads/2023-houston-valentina-aristizabal-240.webp 240w, ../../assets/img/grads/2023-houston-valentina-aristizabal-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Valentina Aristizabal" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Valentina Aristizabal</h3>
                 <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
               </li>
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2023-houston-fallon-barrett-240.webp" srcset="../../assets/img/grads/2023-houston-fallon-barrett-240.webp 240w, ../../assets/img/grads/2023-houston-fallon-barrett-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Fallon Barrett" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Fallon Barrett</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 3 years</p>
-              </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>…Starting with our introductions and stories was a great way to set the tone for the rest of the program. It’s great to have honesty and vulnerability. Also I really like the explanation at the beginning of what the program is about. A big plus for making it interactive and have breakout groups, it helps to form relationships and hear personally from others. The strength finders was great too, I actually prefer it over Eneagram.</blockquote><figcaption><strong>Carlos Hurtado</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>I felt really connected to the others…I think it was so important to get to know everyone personally [and] not just speak about our professional accomplishments. The Gallup assessment was amazing. Being able to learn more about myself and my strengths, but also not be put down for being [who I am] but being lifted for [being] so methodical, was great. I am really appreciative [of] this program…!”</blockquote><figcaption><strong>Imani McMillan</strong>2023 LA Cohort</figcaption></figure><figure class="quote"><blockquote>The visual mapping concerning our core values was one of the most impressive sessions I’ve seen… It teaches you how your core values line up with you becoming a leader, and you may have to shift some things around to reach your goals. Sharing this exercise with my immediate family at home helped me realize where they are in this journey of life, as well as understand what’s important to them.”</blockquote><figcaption><strong>Andre Cooper</strong>2023 Houston Cohort</figcaption></figure></div>
+            <div class="quotes"><figure class="quote"><blockquote>The visual mapping concerning our core values was one of the most impressive sessions I’ve seen… It teaches you how your core values line up with you becoming a leader, and you may have to shift some things around to reach your goals. Sharing this exercise with my immediate family at home helped me realize where they are in this journey of life, as well as understand what’s important to them.”</blockquote><figcaption><strong>Andre Cooper</strong>2023 Houston Cohort</figcaption></figure></div>
           </div>
         </details>
       </div>
@@ -924,65 +927,65 @@
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-angie-harris-240.webp" srcset="../../assets/img/grads/2022-los-angeles-angie-harris-240.webp 240w, ../../assets/img/grads/2022-los-angeles-angie-harris-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Angie Harris" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Angie Harris</h3>
-                <p><strong>Industry:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-ashlynn-stallworth-240.webp" srcset="../../assets/img/grads/2022-los-angeles-ashlynn-stallworth-240.webp 240w, ../../assets/img/grads/2022-los-angeles-ashlynn-stallworth-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Ashlynn Stallworth" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Ashlynn Stallworth</h3>
-                <p><strong>Industry:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
+                <p><strong>Field:</strong> Construction</p><p><strong>Experience as of Enrollment:</strong> 12 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-candace-luckett-240.webp" srcset="../../assets/img/grads/2022-los-angeles-candace-luckett-240.webp 240w, ../../assets/img/grads/2022-los-angeles-candace-luckett-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Candace Luckett" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Candace Luckett</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-dawn-hicks-240.webp" srcset="../../assets/img/grads/2022-los-angeles-dawn-hicks-240.webp 240w, ../../assets/img/grads/2022-los-angeles-dawn-hicks-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Dawn Hicks" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Dawn Hicks</h3>
-                <p><strong>Industry:</strong> Architecture / Affordable Housing</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
+                <p><strong>Field:</strong> Architecture / Affordable Housing</p><p><strong>Experience as of Enrollment:</strong> 8 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-edward-gomez-240.webp" srcset="../../assets/img/grads/2022-los-angeles-edward-gomez-240.webp 240w, ../../assets/img/grads/2022-los-angeles-edward-gomez-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Edward Gomez" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Edward Gomez</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 16 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 16 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-elizabeth-lagarde-240.webp" srcset="../../assets/img/grads/2022-los-angeles-elizabeth-lagarde-240.webp 240w, ../../assets/img/grads/2022-los-angeles-elizabeth-lagarde-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Elizabeth Lagarde" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Elizabeth Lagarde</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 9.5 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 9.5 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-isaac-martinez-240.webp" srcset="../../assets/img/grads/2022-los-angeles-isaac-martinez-240.webp 240w, ../../assets/img/grads/2022-los-angeles-isaac-martinez-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Isaac Martinez" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Isaac Martinez</h3>
-                <p><strong>Industry:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-jameel-jordan-240.webp" srcset="../../assets/img/grads/2022-los-angeles-jameel-jordan-240.webp 240w, ../../assets/img/grads/2022-los-angeles-jameel-jordan-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Jameel Jordan" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Jameel Jordan</h3>
-                <p><strong>Industry:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
+                <p><strong>Field:</strong> Engineering</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-kevin-k-sherrod-240.webp" srcset="../../assets/img/grads/2022-los-angeles-kevin-k-sherrod-240.webp 240w, ../../assets/img/grads/2022-los-angeles-kevin-k-sherrod-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Kevin K. Sherrod" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Kevin K. Sherrod</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10+ years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10+ years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-khan-muhammad-240.webp" srcset="../../assets/img/grads/2022-los-angeles-khan-muhammad-240.webp 240w, ../../assets/img/grads/2022-los-angeles-khan-muhammad-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Khan Muhammad" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Khan Muhammad</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> Internship</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> Internship</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-stephanie-green-240.webp" srcset="../../assets/img/grads/2022-los-angeles-stephanie-green-240.webp 240w, ../../assets/img/grads/2022-los-angeles-stephanie-green-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Stephanie Green" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Stephanie Green</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 5 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2022-los-angeles-virginia-ramirez-240.webp" srcset="../../assets/img/grads/2022-los-angeles-virginia-ramirez-240.webp 240w, ../../assets/img/grads/2022-los-angeles-virginia-ramirez-308.webp 308w" sizes="(max-width: 700px) 45vw, 240px" alt="Virginia Ramirez" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Virginia Ramirez</h3>
-                <p><strong>Industry:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 10 years</p>
               </li>
             </ul>
-            <div class="quotes"><figure class="quote"><blockquote>I would say it’s definitely a life changing experience that we went through. …one of the first [programs] that I’ve had in my life where I’ve been able to open up and just feel completely vulnerable with a group of people that I didn’t know.”</blockquote><figcaption><strong>Jameel Jordan</strong>2022 LA Cohort</figcaption></figure></div>
+            <div class="quotes"><figure class="quote"><blockquote>I would say it’s definitely a life changing experience that we went through. …one of the first [programs] that I’ve had in my life where I’ve been able to open up and just feel completely vulnerable with a group of people that I didn’t know.”</blockquote><figcaption><strong>Jameel Jordan</strong>2022 Los Angeles Cohort</figcaption></figure></div>
           </div>
         </details>
       </div>
@@ -994,11 +997,6 @@
           <summary>Los Angeles</summary>
           <div class="accordion__body">
             <ul class="people people--sm">
-              <li class="person">
-                <div class="person__photo"><img src="../../assets/img/grads/2021-los-angeles-francesca-carney-240.webp" srcset="../../assets/img/grads/2021-los-angeles-francesca-carney-240.webp 240w, ../../assets/img/grads/2021-los-angeles-francesca-carney-310.webp 310w" sizes="(max-width: 700px) 45vw, 240px" alt="Francesca Carney" width="240" height="300" loading="lazy" decoding="async"></div>
-                <h3>Francesca Carney</h3>
-                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
-              </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2021-los-angeles-catherine-hernandez-240.webp" srcset="../../assets/img/grads/2021-los-angeles-catherine-hernandez-240.webp 240w, ../../assets/img/grads/2021-los-angeles-catherine-hernandez-310.webp 310w" sizes="(max-width: 700px) 45vw, 240px" alt="Catherine Hernandez" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Catherine Hernandez</h3>
@@ -1023,6 +1021,11 @@
                 <div class="person__photo"><img src="../../assets/img/grads/2021-los-angeles-duane-williams-240.webp" srcset="../../assets/img/grads/2021-los-angeles-duane-williams-240.webp 240w, ../../assets/img/grads/2021-los-angeles-duane-williams-310.webp 310w" sizes="(max-width: 700px) 45vw, 240px" alt="Duane Williams" width="240" height="300" loading="lazy" decoding="async"></div>
                 <h3>Duane Williams</h3>
                 <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 26 years</p>
+              </li>
+              <li class="person">
+                <div class="person__photo"><img src="../../assets/img/grads/2021-los-angeles-francesca-carney-240.webp" srcset="../../assets/img/grads/2021-los-angeles-francesca-carney-240.webp 240w, ../../assets/img/grads/2021-los-angeles-francesca-carney-310.webp 310w" sizes="(max-width: 700px) 45vw, 240px" alt="Francesca Carney" width="240" height="300" loading="lazy" decoding="async"></div>
+                <h3>Francesca Carney</h3>
+                <p><strong>Field:</strong> Architecture</p><p><strong>Experience as of Enrollment:</strong> 4 years</p>
               </li>
               <li class="person">
                 <div class="person__photo"><img src="../../assets/img/grads/2021-los-angeles-janiece-williams-240.webp" srcset="../../assets/img/grads/2021-los-angeles-janiece-williams-240.webp 240w, ../../assets/img/grads/2021-los-angeles-janiece-williams-310.webp 310w" sizes="(max-width: 700px) 45vw, 240px" alt="Janiece Williams" width="240" height="300" loading="lazy" decoding="async"></div>
@@ -1091,7 +1094,7 @@
       <li><a href="../../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

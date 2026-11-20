@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="../../assets/css/site.css">
 <script defer src="../../assets/js/site.js"></script>
 </head>
-<body>
+<body class="page--form-only">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container site-header__inner">
@@ -27,7 +27,13 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="visually-hidden">Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../../about-us/">About</a></li>
+        <li class="nav__item nav__item--has-sub">
+          <a class="nav__link" href="../../about-us/">About</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-0"><span class="visually-hidden">About menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul class="nav__sub" id="sub-0">
+            <li><a href="../../about-us/">About Us</a></li>
+            <li><a href="../../impact/">Our Impact</a></li>
+          </ul>
+        </li>
         <li class="nav__item nav__item--has-sub">
           <a class="nav__link" href="../../leaderflow-development-program/">Development Program</a><button class="nav__link nav__expand" aria-expanded="false" aria-controls="sub-1"><span class="visually-hidden">Development Program menu</span><svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <ul class="nav__sub" id="sub-1">
@@ -53,56 +59,23 @@
   </div>
 </header>
 <main id="main">
-<!-- Form-first page: the inquiry form sits in the first view; the details follow below it. -->
-<section class="form-hero form-hero--long bp">
-  <div class="container form-hero__inner">
-    <div class="form-hero__text">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li>Flowcilitators</li><li aria-current="page">Become a Flowcilitator</li></ol></nav>
+<!-- Info-first page: the role, qualifications and training come first so people know what they are signing up for;
+     the inquiry form is at the end of the page. -->
+<section class="page-hero bp">
+  <div class="container page-hero__inner">
+    <div class="page-hero__text">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb"><li><a href="../meet-the-flowcilitators/">Flowcilitators</a></li><li aria-current="page">Become a Flowcilitator</li></ol></nav>
       <h1>Become a Flowcilitator</h1>
-      <p class="form-hero__lede">Fill out and submit the form to inquire about becoming a Flowcilitator.</p>
       <ul class="jump-links">
         <li><a href="#role">The role</a></li>
         <li><a href="#qualifications">Qualifications</a></li>
         <li><a href="#training">Orientation &amp; training</a></li>
+        <li><a href="#inquiry">Inquiry form</a></li>
       </ul>
     </div>
-    <div class="form-card form-card--hero">
-      <h2 class="form-card__title">Flowcilitator inquiry</h2>
-      <!-- FORM (M9, front end only). data-endpoint stays empty until the Pages Function /api/flowcilitator exists;
-           JS then posts there. Without JS the browser validates and posts to action="/api/flowcilitator".
-           The Function must re-check everything: required fields, lengths, honeypot ("website"), Turnstile.
-           "sessions" can now arrive more than once (one value per ticked session). -->
-      <form class="form form--2col" action="/api/flowcilitator" method="post" data-endpoint="" data-form="flowcilitator">
-        <div class="field"><label for="fl-name">Name</label><input id="fl-name" name="applicant_name" type="text" autocomplete="name" required maxlength="100"></div>
-        <div class="field"><label for="fl-email">Email</label><input id="fl-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required maxlength="254"></div>
-        <div class="field"><label for="fl-phone">Phone</label><input id="fl-phone" name="phone" type="tel" autocomplete="tel" required maxlength="30"></div>
-        <div class="field"><label for="fl-firm">Firm name</label><input id="fl-firm" name="firm_name" type="text" autocomplete="organization" required maxlength="150"></div>
-        <div class="field field--full">
-          <span class="field__label" id="fl-sessions-label">Sessions of interest <span class="opt">(optional)</span></span>
-          <details class="multi" data-multi>
-            <summary class="multi__summary"><span class="visually-hidden">Sessions of interest: </span><span data-multi-text>Choose one or more</span></summary>
-            <fieldset class="multi__panel" aria-labelledby="fl-sessions-label">
-              <label class="check"><input type="checkbox" name="sessions" value="Building Trust, Growth-Mindset, Strengths"><span>Building Trust, Growth-Mindset, Strengths</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Total Leadership &amp; Work-Life Integration"><span>Total Leadership &amp; Work-Life Integration</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Emotional Intelligence"><span>Emotional Intelligence</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Crucial Conversations"><span>Crucial Conversations</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Project Leadership &amp; Client Development"><span>Project Leadership &amp; Client Development</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Financial Aspects of a Project &amp; Practice"><span>Financial Aspects of a Project &amp; Practice</span></label>
-              <label class="check"><input type="checkbox" name="sessions" value="Firm &amp; Practice Leadership"><span>Firm &amp; Practice Leadership</span></label>
-            </fieldset>
-          </details>
-        </div>
-        <div class="field field--full"><label for="fl-why">Why do you want to become a Flowcilitator? <span class="opt">(optional)</span></label><textarea id="fl-why" name="why" rows="3" maxlength="3000"></textarea></div>
-        <div class="field"><label for="fl-edu">Education / background <span class="opt">(optional)</span></label><textarea id="fl-edu" name="education" rows="2" maxlength="3000"></textarea></div>
-        <div class="field"><label for="fl-msg">Other comments <span class="opt">(optional)</span></label><textarea id="fl-msg" name="message" rows="2" maxlength="3000"></textarea></div>
-        <div class="form__hp" aria-hidden="true"><label for="fl-website">Leave this field empty</label><input id="fl-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="100"></div>
-        <!-- TURNSTILE: the widget renders here (managed mode, loaded on first focus; see site.js). No site key yet. -->
-        <div class="form__turnstile field--full" data-turnstile-slot></div>
-        <div class="form__actions field--full"><button class="btn btn--submit" type="submit">Send inquiry<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><p class="form__status" role="status" aria-live="polite"></p></div>
-      </form>
-    </div>
+    <div class="page-hero__media"><img src="../../assets/img/photo/experience-video-poster.webp" alt="" width="1280" height="720" decoding="async" class="pos-top"></div>
   </div>
-  <svg class="flow flow--hero" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M-20 196C190 196 260 70 470 70s300 120 520 120S1300 36 1460 36"/><path pathLength="1" class="flow__echo" d="M-20 214C200 214 280 96 480 96s290 116 520 116S1310 60 1460 60"/></svg>
+
 </section>
 
 <section class="section" id="role">
@@ -113,11 +86,12 @@
     </div>
     <div class="grid grid--2">
       <div class="form-card reveal">
-        <p>As a <strong>Flowcilitator</strong> you will have an opportunity to:</p>
+        <h2 class="title-sm">The Flowcilitator Role</h2>
+        <p><strong>As a Flowcilitator, you will have an opportunity to:</strong></p>
         <ul class="ticks ticks--lg">
           <li>Collaborate with other AEC industry leaders to explore effective leadership strategies.</li>
           <li>Engage in personal development and lead professional development to help transform workplace culture.</li>
-          <li>Attend the LeaderFlow Development Program Flowcilitator Orientation and Training Program and become certified in The “Flowcilitator” Framework: A Model For Inclusive Facilitation.</li>
+          <li>Attend the LeaderFlow Development Program Flowcilitator Orientation and Training Program and become certified in The “Flowcilitator” Framework: A Model for Inclusive Facilitation.</li>
         </ul>
       </div>
       <div class="form-card reveal" id="qualifications">
@@ -139,7 +113,7 @@
   <div class="container split split--wide-text">
     <div class="prose reveal">
       <h2>The Flowcilitator Orientation and Training Program</h2>
-      <p>The Flowcilitator Orientation and Training Program is designed for leaders who are ready to make the bold moves necessary to center equity within their organizations, spark sustainable work, and inspire people – including colleagues and external partners – to join them in building a vibrant and inclusive future. The “Flowcilitator” framework: A Model For Inclusive Facilitation was developed in partnership with Rooted Consulting Group.</p>
+      <p>The Flowcilitator Orientation and Training Program is designed for leaders who are ready to make the bold moves necessary to center equity within their organizations, spark sustainable work, and inspire people – including colleagues and external partners – to join them in building a vibrant and inclusive future. The “Flowcilitator” Framework: A Model for Inclusive Facilitation was developed in partnership with Rooted Consulting Group.</p>
       <p><em>After participating in the Flowcilitator Orientation and Training Program, you will be able to:</em></p>
       <ul class="ticks ticks--lg">
         <li>Increase your skills as a facilitator, and learn how to effectively lead and facilitate a conversation or meeting with equity and inclusion in mind</li>
@@ -155,10 +129,48 @@
   </div>
 </section>
 
-<section class="section section--tight cta-inline">
-  <div class="container cta-inline__inner">
-    <h2 class="title-sm">Ready to lead a session?</h2>
-    <a class="btn btn--arrow" href="#main">Back to the inquiry form</a>
+<section class="form-hero form-hero--long form-hero--end bp" id="inquiry">
+  <div class="container form-hero__inner">
+    <div class="form-hero__text">
+      <h2 class="form-hero__title">Ready to lead a session?</h2>
+      <p class="form-hero__lede">Fill out and submit the form to inquire about becoming a Flowcilitator.</p>
+      <p class="form-hero__back"><a href="#qualifications">Review the qualifications</a></p>
+    </div>
+    <div class="form-card form-card--hero">
+      <h2 class="form-card__title">Flowcilitator inquiry</h2>
+      <!-- FORM (M9, front end only). data-endpoint stays empty until the Pages Function /api/flowcilitator exists;
+           JS then posts there. Without JS the browser validates and posts to action="/api/flowcilitator".
+           The Function must re-check everything: required fields, lengths, honeypot ("website"), Turnstile.
+           "sessions" can now arrive more than once (one value per ticked session). -->
+      <form class="form form--2col" action="/api/flowcilitator" method="post" data-endpoint="" data-form="flowcilitator">
+        <div class="field"><label for="fl-name">Name</label><input id="fl-name" name="applicant_name" type="text" autocomplete="name" required maxlength="100"></div>
+        <div class="field"><label for="fl-email">Email</label><input id="fl-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="name@example.com" required maxlength="254"></div>
+        <div class="field"><label for="fl-phone">Phone</label><input id="fl-phone" name="phone" type="tel" autocomplete="tel" required maxlength="30"></div>
+        <div class="field"><label for="fl-firm">Firm name</label><input id="fl-firm" name="firm_name" type="text" autocomplete="organization" required maxlength="150"></div>
+        <div class="field field--full">
+          <span class="field__label" id="fl-sessions-label">Sessions of interest <span class="opt">(optional)</span></span>
+          <details class="multi" data-multi>
+            <summary class="multi__summary"><span class="visually-hidden">Sessions of interest: </span><span data-multi-text>Choose one or more</span></summary>
+            <fieldset class="multi__panel" aria-labelledby="fl-sessions-label">
+              <label class="check"><input type="checkbox" name="sessions" value="Building Trust / Growth Mindset / Leading Through Strengths"><span>Building Trust / Growth Mindset / Leading Through Strengths</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Total Leadership and Work-Life Integration"><span>Total Leadership and Work-Life Integration</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Emotional Intelligence"><span>Emotional Intelligence</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Crucial Conversations"><span>Crucial Conversations</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Relationship-Centered Leadership"><span>Relationship-Centered Leadership</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Financial Aspects of Practice and Project Leadership"><span>Financial Aspects of Practice and Project Leadership</span></label>
+              <label class="check"><input type="checkbox" name="sessions" value="Leadership in Action"><span>Leadership in Action</span></label>
+            </fieldset>
+          </details>
+        </div>
+        <div class="field field--full"><label for="fl-why">Why do you want to become a Flowcilitator? <span class="opt">(optional)</span></label><textarea id="fl-why" name="why" rows="3" maxlength="3000"></textarea></div>
+        <div class="field"><label for="fl-edu">Education / background <span class="opt">(optional)</span></label><textarea id="fl-edu" name="education" rows="2" maxlength="3000"></textarea></div>
+        <div class="field"><label for="fl-msg">Other comments <span class="opt">(optional)</span></label><textarea id="fl-msg" name="message" rows="2" maxlength="3000"></textarea></div>
+        <div class="form__hp" aria-hidden="true"><label for="fl-website">Leave this field empty</label><input id="fl-website" name="website" type="text" tabindex="-1" autocomplete="off" maxlength="100"></div>
+        <!-- TURNSTILE: the widget renders here (managed mode, loaded on first focus; see site.js). No site key yet. -->
+        <div class="form__turnstile field--full" data-turnstile-slot></div>
+        <div class="form__actions field--full"><button class="btn btn--submit" type="submit">Send inquiry<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button><p class="form__status" role="status" aria-live="polite"></p></div>
+      </form>
+    </div>
   </div>
 </section>
 </main>
@@ -190,7 +202,7 @@
       <li><a href="../../become-a-sponsor/">Sponsor</a></li>
       <li><a href="../../connect-with-us/">Connect</a></li>
     </ul>
-    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow is a project of Community Partners, a 501c3 company.</p>
+    <p class="footer__legal">© 2026 LeaderFlow. All rights reserved.<span>|</span>LeaderFlow, Inc. is a 501(c)(3) nonprofit organization.</p>
   </div></div>
 </footer>
 <nav class="tabbar" aria-label="Quick links">

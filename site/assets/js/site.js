@@ -165,6 +165,176 @@
     });
   });
 
+  /* ---------- Graduates: cities open as you scroll to them ----------
+     A city opens just before it scrolls into view; the one before it closes once it is fully out of sight,
+     and the scroll position is corrected in the same frame so nothing on screen moves. Works in both
+     directions. A city the visitor opens or closes by hand is left alone until it leaves the screen. */
+  if (document.querySelector('details.city')) {
+    document.documentElement.classList.add('auto-cities'); // turns off browser scroll anchoring; we correct it ourselves
+    var header = document.querySelector('.site-header');
+    var autoToggling = false;
+    var lastY = window.scrollY;
+    var setOpen = function (city, open, anchor) {
+      var before = anchor ? anchor.getBoundingClientRect().top : 0;
+      autoToggling = true;
+      city.open = open;
+      autoToggling = false;
+      if (anchor) {
+        var shift = anchor.getBoundingClientRect().top - before;
+        if (shift) window.scrollTo({ top: window.scrollY + shift, behavior: 'instant' });
+      }
+      lastY = window.scrollY; // our own correction is not the visitor changing direction
+    };
+    document.querySelectorAll('details.city').forEach(function (city) {
+      city.addEventListener('toggle', function () { if (!autoToggling) city.dataset.manual = '1'; });
+    });
+    var check = function () {
+      var y = window.scrollY;
+      if (y === lastY) return;
+      var down = y > lastY; lastY = y;
+      var panel = document.querySelector('.cohort:not([hidden])');
+      if (!panel) return;
+      var cities = Array.prototype.slice.call(panel.querySelectorAll('details.city'));
+      var top = header ? header.getBoundingClientRect().bottom : 0;
+      var vh = window.innerHeight;
+      var rects = cities.map(function (c) { return c.getBoundingClientRect(); });
+      // Forget a hand-made choice once that city is off screen.
+      cities.forEach(function (c, i) { if (c.dataset.manual && (rects[i].bottom < top || rects[i].top > vh)) delete c.dataset.manual; });
+      var anyOpen = function (from, to) { for (var k = from; k < to; k++) if (cities[k].open) return true; return false; };
+      for (var i = 0; i < cities.length; i++) {
+        var c = cities[i], r = rects[i];
+        if (c.dataset.manual) continue;
+        if (down) {
+          // Open the next city as it approaches the bottom of the screen (its list grows below, out of view).
+          if (!c.open && r.top < vh + 200 && r.bottom > top && (i === 0 || cities[i - 1].open)) { setOpen(c, true); return; }
+          // Close a city scrolled fully past, keeping what is on screen where it is.
+          if (c.open && r.bottom < top - 40 && anyOpen(i + 1, cities.length)) { setOpen(c, false, cities[i + 1]); return; }
+        } else {
+          // Scrolling up: open the city above just before it comes into view, keeping the screen still.
+          if (!c.open && r.top < top && r.bottom > top - 400 && i + 1 < cities.length && cities[i + 1].open) { setOpen(c, true, cities[i + 1]); return; }
+          // Close a city now fully below the screen.
+          if (c.open && r.top > vh + 40 && anyOpen(0, i)) { setOpen(c, false); return; }
+        }
+      }
+    };
+    var queued = false;
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; check(); });
+    }, { passive: true });
+  }
+
+  /* ---------- Quote that writes itself in, word by word, when it scrolls into view ----------
+     Screen readers get the plain sentence; the animated words are hidden from them. Without JS the quote is
+     plain text. The animation itself is CSS (.qw), started by the reveal code adding .is-visible. */
+  document.querySelectorAll('[data-words]').forEach(function (el) {
+    var text = el.textContent.trim();
+    var plain = document.createElement('span');
+    plain.className = 'visually-hidden';
+    plain.textContent = text;
+    var anim = document.createElement('span');
+    anim.setAttribute('aria-hidden', 'true');
+    text.split(/\s+/).forEach(function (word, i) {
+      var w = document.createElement('span');
+      w.className = 'qw';
+      w.style.setProperty('--w', i);
+      w.textContent = word;
+      anim.appendChild(w);
+      anim.appendChild(document.createTextNode(' '));
+    });
+    el.textContent = '';
+    el.appendChild(plain);
+    el.appendChild(anim);
+    el.classList.add('is-split');
+  });
+
+  /* ---------- FAQ search ----------
+     Scores each question by the keywords it shares with the search (question text counts more than the answer),
+     using simple word stems and a few synonyms so "price" finds "cost" and "virtual" finds "online". Questions with
+     no shared keyword are hidden. If none match, a link offers to send the question through the contact form. */
+  var faqSearch = document.querySelector('[data-faq-search]');
+  if (faqSearch) {
+    var STOP = 'a an the and or of to in on for is are am be do does did i im my me we our you your it its this that what when where who whom why how can could will would should there their they with at by from as if any about into get have has much many'.split(' ');
+    var SYN = [
+      ['cost', 'price', 'fee', 'pay', 'paid', 'free', 'money', 'charge', 'tuition', 'expens', 'afford'],
+      ['time', 'hour', 'commit', 'commitment', 'schedul', 'long', 'duration', 'month', 'week', 'day', 'friday'],
+      ['online', 'virtual', 'remote', 'zoom', 'person', 'location', 'locat', 'where', 'place', 'city'],
+      ['apply', 'applic', 'applicat', 'appli', 'deadline', 'select', 'accept', 'admiss', 'enrol', 'regist', 'sign'],
+      ['eligib', 'qualif', 'requir', 'prerequisit', 'experi', 'year', 'who'],
+      ['certif', 'credenti', 'credit', 'ceu', 'aia', 'continu'],
+      ['mentor', 'coach', 'network', 'connect', 'relationship'],
+      ['sponsor', 'employ', 'compani', 'firm', 'fund', 'support']
+    ];
+    var stem = function (w) {
+      w = w.replace(/[’']s$/, '');
+      if (w.length > 5) w = w.replace(/(ations?|ing|ed|ies|es|s|ly|ment)$/, '');
+      return w.length > 7 ? w.slice(0, 7) : w;
+    };
+    var words = function (text) {
+      return (text.toLowerCase().match(/[a-z0-9’']+/g) || []).filter(function (w) { return STOP.indexOf(w) < 0 && w.length > 1; }).map(stem);
+    };
+    var expand = function (w) {
+      var out = [w];
+      SYN.forEach(function (g) { if (g.some(function (s) { return w.indexOf(s) === 0 || s.indexOf(w) === 0; })) out = out.concat(g); });
+      return out;
+    };
+    var faqItems = Array.prototype.map.call(document.querySelectorAll('.faq-group details'), function (d) {
+      return { el: d, group: d.closest('.faq-group'), q: words(d.querySelector('summary').textContent), a: words(d.querySelector('.accordion__body').textContent + ' ' + d.closest('.faq-group').querySelector('h2').textContent) };
+    });
+    var groups = Array.prototype.slice.call(document.querySelectorAll('.faq-group'));
+    var input = faqSearch.querySelector('input');
+    var status = faqSearch.querySelector('.faq-search__status');
+    var empty = faqSearch.querySelector('.faq-search__empty');
+    var ask = faqSearch.querySelector('[data-faq-ask]');
+    var askBase = ask.getAttribute('href');
+    var has = function (list, term) { return list.some(function (w) { return w === term || (term.length >= 4 && (w.indexOf(term) === 0 || term.indexOf(w) === 0) && w.length >= 4); }); };
+    var run = function () {
+      var raw = input.value.trim();
+      var terms = words(raw);
+      if (!terms.length) {
+        faqItems.forEach(function (it) { it.el.hidden = false; });
+        groups.forEach(function (g) { g.hidden = false; });
+        status.textContent = ''; empty.hidden = true;
+        return;
+      }
+      var shown = 0, best = 0;
+      faqItems.forEach(function (it) {
+        var score = 0;
+        terms.forEach(function (t) {
+          if (has(it.q, t)) score += 3; else if (has(it.a, t)) score += 2;
+          else if (expand(t).some(function (s) { return has(it.q, s); })) score += 1.5;
+          else if (expand(t).some(function (s) { return has(it.a, s); })) score += .5;
+        });
+        it.score = score;
+        best = Math.max(best, score);
+      });
+      // Show every reasonable match, but when some questions match strongly, drop the ones that only brush past.
+      var cut = Math.max(1, best * 0.5);
+      faqItems.forEach(function (it) {
+        it.el.hidden = it.score < cut;
+        if (!it.el.hidden) shown++;
+      });
+      groups.forEach(function (g) { g.hidden = !g.querySelector('details:not([hidden])'); g.classList.add('is-visible'); });
+      status.textContent = shown ? shown + (shown === 1 ? ' question matches.' : ' questions match.') : '';
+      empty.hidden = shown > 0;
+      ask.setAttribute('href', askBase.replace('#', '?question=' + encodeURIComponent(raw.slice(0, 500)) + '#'));
+    };
+    faqSearch.hidden = false;
+    input.addEventListener('input', run);
+    input.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+      e.preventDefault();
+      var first = document.querySelector('.faq-group details:not([hidden])');
+      if (first) { first.open = true; first.querySelector('summary').focus(); }
+    });
+  }
+
+  /* Contact form: a question sent from the FAQ search arrives as ?question=… and fills in the message. */
+  var askedQuestion = new URLSearchParams(location.search).get('question');
+  var contactMessage = document.getElementById('contact-message');
+  if (askedQuestion && contactMessage && !contactMessage.value) contactMessage.value = askedQuestion.slice(0, 500);
+
   /* ---------- Forms: validate, then post to data-endpoint (see README) ----------
      Without JS the browser validates (required/type/maxlength) and posts to the form's action.
      With JS we validate ourselves so errors are shown inline and announced. */
